@@ -482,7 +482,8 @@ that serve the A train, 107 stations are ADA compliant.</p>
   janitor::clean_names() %&gt;%
   select(-c(15, 16)) %&gt;% 
   filter(!is.na(dumpster)) %&gt;% 
-  mutate(sports_balls = as.integer(round(sports_balls)))</code></pre>
+  mutate(sports_balls = as.integer(round(sports_balls)),
+         year = as.integer(year))</code></pre>
 <pre><code>## New names:
 ## • `` -&gt; `...15`
 ## • `` -&gt; `...16`</code></pre>
@@ -494,14 +495,48 @@ proftrash_wheel = read_excel(&quot;/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p810
                              na = c(&quot;NA&quot;, &quot;.&quot;, &quot;&quot;)) %&gt;% 
   janitor::clean_names() %&gt;%
   filter(!is.na(dumpster)) %&gt;% 
-  mutate(person = &quot;prof_trash_wheel&quot;)
+  mutate(person = &quot;prof_trash_wheel&quot;,
+         year = as.integer(year))
 
 gwynnda_trash_wheel = read_excel(&quot;/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202309_Trash Wheel_Collection Data.xlsx&quot;, 
                              sheet = 4,
                              na = c(&quot;NA&quot;, &quot;.&quot;, &quot;&quot;)) %&gt;% 
   janitor::clean_names() %&gt;%
   filter(!is.na(dumpster)) %&gt;% 
-  mutate(person = &quot;gwynnda_trash_wheel&quot;)</code></pre>
+  mutate(person = &quot;gwynnda_trash_wheel&quot;,
+         year = as.integer(year))</code></pre>
+<pre class="r"><code>trash_wheel = 
+  bind_rows(mrtrash_wheel, proftrash_wheel, gwynnda_trash_wheel) %&gt;% 
+  janitor::clean_names() %&gt;% 
+  relocate(person)</code></pre>
+<p>The combined dataset has 845 observations in total. The variable
+“person” indicates which Trash Wheel (Mr Trash Wheel, Professor Trash
+Wheel, or Gwynnda Trash Wheel). The variable “dumpster” indicates the
+dumpter number. There are also self-explanatory variables including date
+of collection, amount of total litter and litter type.</p>
+<pre class="r"><code>total_weight_professor_trash_wheel = trash_wheel %&gt;%
+  filter(person == &quot;prof_trash_wheel&quot;) %&gt;% 
+  summarise(total_weight = sum(weight_tons, na.rm = TRUE))
+
+total_cigarette_gwynnda_trash_wheel = trash_wheel %&gt;%
+  filter(person == &quot;gwynnda_trash_wheel&quot;,
+         month == &quot;June&quot;,
+         year == &quot;2022&quot;) %&gt;% 
+  summarise(total_number_cigarette_butts = sum(cigarette_butts, na.rm = TRUE))
+
+print(total_weight_professor_trash_wheel)</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##   total_weight
+##          &lt;dbl&gt;
+## 1         216.</code></pre>
+<pre class="r"><code>print(total_cigarette_gwynnda_trash_wheel)</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##   total_number_cigarette_butts
+##                          &lt;dbl&gt;
+## 1                        18120</code></pre>
+<p>The total weight of trash collected by Professor Trash Wheel is
+216.26 tons. The total number of cigarette butts collected by Gwynnda in
+June of 2022 is 18120.</p>
 </div>
 
 

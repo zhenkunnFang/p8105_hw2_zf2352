@@ -116,7 +116,8 @@ mrtrash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_z
   janitor::clean_names() %>%
   select(-c(15, 16)) %>% 
   filter(!is.na(dumpster)) %>% 
-  mutate(sports_balls = as.integer(round(sports_balls)))
+  mutate(sports_balls = as.integer(round(sports_balls)),
+         year = as.integer(year))
 ```
 
 ```{r}
@@ -128,17 +129,40 @@ proftrash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2
                              na = c("NA", ".", "")) %>% 
   janitor::clean_names() %>%
   filter(!is.na(dumpster)) %>% 
-  mutate(person = "prof_trash_wheel")
+  mutate(person = "prof_trash_wheel",
+         year = as.integer(year))
 
 gwynnda_trash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202309_Trash Wheel_Collection Data.xlsx", 
                              sheet = 4,
                              na = c("NA", ".", "")) %>% 
   janitor::clean_names() %>%
   filter(!is.na(dumpster)) %>% 
-  mutate(person = "gwynnda_trash_wheel")
+  mutate(person = "gwynnda_trash_wheel",
+         year = as.integer(year))
 ```
 
 ```{r combine dataset}
-
+trash_wheel = 
+  bind_rows(mrtrash_wheel, proftrash_wheel, gwynnda_trash_wheel) %>% 
+  janitor::clean_names() %>% 
+  relocate(person)
 ```
 
+The combined dataset has 845 observations in total. The variable "person" indicates which Trash Wheel (Mr Trash Wheel, Professor Trash Wheel, or Gwynnda Trash Wheel). The variable "dumpster" indicates the dumpter number. There are also self-explanatory variables including date of collection, amount of total litter and litter type. 
+
+```{r}
+total_weight_professor_trash_wheel = trash_wheel %>%
+  filter(person == "prof_trash_wheel") %>% 
+  summarise(total_weight = sum(weight_tons, na.rm = TRUE))
+
+total_cigarette_gwynnda_trash_wheel = trash_wheel %>%
+  filter(person == "gwynnda_trash_wheel",
+         month == "June",
+         year == "2022") %>% 
+  summarise(total_number_cigarette_butts = sum(cigarette_butts, na.rm = TRUE))
+
+print(total_weight_professor_trash_wheel)
+print(total_cigarette_gwynnda_trash_wheel)
+```
+
+The total weight of trash collected by Professor Trash Wheel is 216.26 tons. The total number of cigarette butts collected by Gwynnda in June of 2022 is 18120.
