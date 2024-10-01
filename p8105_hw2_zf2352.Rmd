@@ -1,0 +1,29 @@
+---
+title: "p8105_hw2_zf2352"
+author: "Zhenkun Fang"
+date: "2024-09-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+```
+
+# Probelm 1
+
+```{r, }
+nyc_subway = 
+  read_csv("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/NYC_Transit_Subway_Entrance_And_Exit_Data.csv",
+           na = c("NA", ".", "")) %>% 
+  janitor::clean_names() %>% 
+  select(line, station_name, station_latitude, station_longitude, 
+         route1, route2, route3, route4, route5, 
+         entry, vending, entrance_type, ada) %>% 
+  mutate(entry = ifelse(entry == "YES", TRUE, FALSE))
+
+view(nyc_subway)
+```
+
+
