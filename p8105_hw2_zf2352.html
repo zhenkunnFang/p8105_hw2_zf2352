@@ -586,8 +586,8 @@ colnames(bakers) [1] = &quot;baker&quot;</code></pre>
 <pre class="r"><code>bakers = bakers %&gt;% 
   mutate(baker = sub(&quot;^(\\S+).*&quot;, &quot;\\1&quot;, baker))</code></pre>
 <pre class="r"><code>combined_dataset = bakes %&gt;% 
-  left_join(bakers, by = c(&quot;baker&quot;, &quot;series&quot;)) %&gt;% 
-  left_join(results, by = c(&quot;baker&quot;, &quot;series&quot;, &quot;episode&quot;)) %&gt;% 
+  full_join(bakers, by = c(&quot;baker&quot;, &quot;series&quot;)) %&gt;% 
+  right_join(results, by = c(&quot;baker&quot;, &quot;series&quot;, &quot;episode&quot;)) %&gt;% 
   relocate(baker) %&gt;% 
   relocate(baker_age, .after = baker) %&gt;% 
   relocate(baker_occupation, .before = series)</code></pre>
@@ -607,17 +607,777 @@ contain first names, so I modified the ‘bakers’ dataset to include only
 first names. After attempting to join the datasets, I found that the
 “series” and “episode” columns in the ‘results’ dataset were stored as
 characters instead of integers, so I converted them to integers.</p>
-<p>To have the final dataset, I used ‘left_join’ function to join 3
-datasets all together. The final dataset has 548 observations in total.
-I put the bakers’ name at the first column. The final dataset has the
-data of every baker’s name, age, and occupation in every series and
-episode with valid data in terms of signature bake, show topper,
-hometown, technical, and result.</p>
+<p>To have the final dataset, I used ‘full_join’ and ‘right_join’
+function to join 3 datasets all together. The final dataset has 1136
+observations in total. I put the bakers’ name at the first column. The
+final dataset has the data of every baker’s name, age, and occupation in
+every series and episode with valid data in terms of signature bake,
+show topper, hometown, technical, and result.</p>
 <p>The final dataset still has some issues. First, there are remaining
 missing values in the dataset. Second, since the ‘results’ dataset
 contains more bakers than the other two datasets, using the left_join
 function would result in the loss of many observations from the
 ‘results’ dataset.</p>
+<pre class="r"><code>star_baker_table = combined_dataset %&gt;% 
+  filter(series &gt;= 5) %&gt;% 
+  filter(result == &quot;STAR BAKER&quot;) %&gt;% 
+  knitr::kable()
+
+star_baker_table</code></pre>
+<table style="width:100%;">
+<colgroup>
+<col width="3%" />
+<col width="3%" />
+<col width="15%" />
+<col width="2%" />
+<col width="2%" />
+<col width="28%" />
+<col width="24%" />
+<col width="11%" />
+<col width="3%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">baker</th>
+<th align="right">baker_age</th>
+<th align="left">baker_occupation</th>
+<th align="right">series</th>
+<th align="right">episode</th>
+<th align="left">signature_bake</th>
+<th align="left">show_stopper</th>
+<th align="left">hometown</th>
+<th align="left">technical</th>
+<th align="left">result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Nancy</td>
+<td align="right">60</td>
+<td align="left">Retired Practice Manager</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="left">Coffee and Hazelnut Swiss Roll</td>
+<td align="left">Jaffa Orange Cakes</td>
+<td align="left">Barton-upon-Humber, Lincolnshire</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Richard</td>
+<td align="right">38</td>
+<td align="left">Builder</td>
+<td align="right">5</td>
+<td align="right">2</td>
+<td align="left">Rosemary Seeded Crackers</td>
+<td align="left">Pirates!</td>
+<td align="left">Mill Hill, London</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Luis</td>
+<td align="right">42</td>
+<td align="left">Graphic Designer</td>
+<td align="right">5</td>
+<td align="right">3</td>
+<td align="left">Opposites Attract Rolls</td>
+<td align="left">Roscón de Reyes</td>
+<td align="left">Poynton, Cheshire</td>
+<td align="left">2</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Richard</td>
+<td align="right">38</td>
+<td align="left">Builder</td>
+<td align="right">5</td>
+<td align="right">4</td>
+<td align="left">Black Forest Chocolate Fondants</td>
+<td align="left">Tiramisu Baked Alaska</td>
+<td align="left">Mill Hill, London</td>
+<td align="left">5</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Kate</td>
+<td align="right">41</td>
+<td align="left">Furniture Restorer</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="left">Rhubarb and Custard Tart</td>
+<td align="left">Rhubarb, Prune and Apple Pies</td>
+<td align="left">Brighton, East Sussex</td>
+<td align="left">3</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Chetna</td>
+<td align="right">35</td>
+<td align="left">Fashion Designer</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="left">Orange Savarin with Cinnamon Cream</td>
+<td align="left">Almond Liqueur Dobos Torte with Chocolate Caramel
+Buttercream</td>
+<td align="left">Broadstairs, Kent</td>
+<td align="left">2</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Richard</td>
+<td align="right">38</td>
+<td align="left">Builder</td>
+<td align="right">5</td>
+<td align="right">7</td>
+<td align="left">Minted Lamb Pasties</td>
+<td align="left">Stair of Éclairs</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">(Lavender and Blueberry &amp; Rose and Raspberry
+Éclairs)</td>
+<td align="right">Mill Hill, London</td>
+<td align="left">1</td>
+<td align="right">STAR BAKER</td>
+<td align="right"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Richard</td>
+<td align="right">38</td>
+<td align="left">Builder</td>
+<td align="right">5</td>
+<td align="right">8</td>
+<td align="left">Fruit Swedish Tea Ring</td>
+<td align="left">Rhubarb and Custard and Toffee Apple Doughnuts</td>
+<td align="left">Mill Hill, London</td>
+<td align="left">4</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Richard</td>
+<td align="right">38</td>
+<td align="left">Builder</td>
+<td align="right">5</td>
+<td align="right">9</td>
+<td align="left">Rose and Pistachio BaklavaWalnut and Almond
+Baklava</td>
+<td align="left">Hazelnut Mocha EntremetsPink Grapefruit Entremets</td>
+<td align="left">Mill Hill, London</td>
+<td align="left">2</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Marie</td>
+<td align="right">66</td>
+<td align="left">Retired</td>
+<td align="right">6</td>
+<td align="right">1</td>
+<td align="left">Zingy Citrus Madeira Cake</td>
+<td align="left">A Walk in the Black Forest</td>
+<td align="left">Auchterarder, Perthshire</td>
+<td align="left">3</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Ian</td>
+<td align="right">41</td>
+<td align="left">Travel photographer</td>
+<td align="right">6</td>
+<td align="right">2</td>
+<td align="left">Orange, Rosemary and Almond Biscotti</td>
+<td align="left">Sandwich de la Confiture</td>
+<td align="left">Great Wilbraham, Cambridgeshire</td>
+<td align="left">3</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Ian</td>
+<td align="right">41</td>
+<td align="left">Travel photographer</td>
+<td align="right">6</td>
+<td align="right">3</td>
+<td align="left">Wild Garlic Pesto Soda Breads</td>
+<td align="left">Flour Power</td>
+<td align="left">Great Wilbraham, Cambridgeshire</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Ian</td>
+<td align="right">41</td>
+<td align="left">Travel photographer</td>
+<td align="right">6</td>
+<td align="right">4</td>
+<td align="left">Pomegranate Two Ways Crème Brûlées</td>
+<td align="left">Trio of Spicy and Herby Baked Cheesecakes</td>
+<td align="left">Great Wilbraham, Cambridgeshire</td>
+<td align="left">4</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Nadiya</td>
+<td align="right">30</td>
+<td align="left">Full-time mother</td>
+<td align="right">6</td>
+<td align="right">5</td>
+<td align="left">Naked Blueberry and Caraway Crunch Cake</td>
+<td align="left">Chocolate and Strawberry Lime Ice Cream Roll</td>
+<td align="left">Leeds / Luton</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Mat</td>
+<td align="right">37</td>
+<td align="left">Fire fighter</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="left">Piña Colada Frangipane Tart</td>
+<td align="left">His ‘n’ Hers Vol-au-vents</td>
+<td align="left">London</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Tamal</td>
+<td align="right">29</td>
+<td align="left">Trainee anaesthetist</td>
+<td align="right">6</td>
+<td align="right">7</td>
+<td align="left">Middle Eastern Game Pie</td>
+<td align="left">Spiced Blackberry, Raspberry and Cardamom Charlotte
+Russe</td>
+<td align="left">Manchester</td>
+<td align="left">3</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Nadiya</td>
+<td align="right">30</td>
+<td align="left">Full-time mother</td>
+<td align="right">6</td>
+<td align="right">8</td>
+<td align="left">Rose Pistachio and Mocha Hazelnut Horns</td>
+<td align="left">Bubble Gum and Peppermint Cream Religieuse à
+l’ancienne</td>
+<td align="left">Leeds / Luton</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Nadiya</td>
+<td align="right">30</td>
+<td align="left">Full-time mother</td>
+<td align="right">6</td>
+<td align="right">9</td>
+<td align="left">Peanut Salted Caramel and Chocolate Tart</td>
+<td align="left">Peacock in Nan’s Door</td>
+<td align="left">Leeds / Luton</td>
+<td align="left">4</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Jane</td>
+<td align="right">61</td>
+<td align="left">Garden designer</td>
+<td align="right">7</td>
+<td align="right">1</td>
+<td align="left">Lemon and Poppy Seed Drizzle Cake</td>
+<td align="left">Chocolate Orange Mirror Cake</td>
+<td align="left">Beckenham</td>
+<td align="left">7</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Candice</td>
+<td align="right">31</td>
+<td align="left">PE teacher</td>
+<td align="right">7</td>
+<td align="right">2</td>
+<td align="left">Salted Caramel, Chocolate Iced Shiny Hearts</td>
+<td align="left">Gingerbread Pub with Sticky Ginger Carpet</td>
+<td align="left">Barton-Le-Clay, Bedfordshire</td>
+<td align="left">8</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Tom</td>
+<td align="right">26</td>
+<td align="left">Project engagement manager</td>
+<td align="right">7</td>
+<td align="right">3</td>
+<td align="left">Chocolate Orange and Chilli Swirl Bread</td>
+<td align="left">Jörmungandr and Mjölnir</td>
+<td align="left">Rochdale</td>
+<td align="left">4</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Benjamina</td>
+<td align="right">23</td>
+<td align="left">Teaching assistant</td>
+<td align="right">7</td>
+<td align="right">4</td>
+<td align="left">Red Onion Chutney, Brie and Bacon Yorkshire
+Puddings</td>
+<td align="left">Tropical Churros</td>
+<td align="left">South London</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Candice</td>
+<td align="right">31</td>
+<td align="left">PE teacher</td>
+<td align="right">7</td>
+<td align="right">5</td>
+<td align="left">Danish Pastry Croque Monsieur Kites and Cinnamon Apple,
+Vanilla Crème Rose Danish</td>
+<td align="left">Sausage, Black Pudding and Apple Rounds and Banoffee
+Whiskey Cups</td>
+<td align="left">Barton-Le-Clay, Bedfordshire</td>
+<td align="left">2</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Tom</td>
+<td align="right">26</td>
+<td align="left">Project engagement manager</td>
+<td align="right">7</td>
+<td align="right">6</td>
+<td align="left">Blood Orange Halloween Pumpkin Pie</td>
+<td align="left">Floral Tea Cake</td>
+<td align="left">Rochdale</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Andrew</td>
+<td align="right">25</td>
+<td align="left">Aerospace engineer</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="left">Tropical Holiday Roulade</td>
+<td align="left">Childhood Ice Cream Mousse Cakes</td>
+<td align="left">Derby / Holywood, County Down</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Candice</td>
+<td align="right">31</td>
+<td align="left">PE teacher</td>
+<td align="right">7</td>
+<td align="right">8</td>
+<td align="left">Cheesy Cheeky Fish Pies</td>
+<td align="left">Peacock</td>
+<td align="left">Barton-Le-Clay, Bedfordshire</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Andrew</td>
+<td align="right">25</td>
+<td align="left">Aerospace engineer</td>
+<td align="right">7</td>
+<td align="right">9</td>
+<td align="left">Cheesy Elephant Ears and Herby Treble Clefs</td>
+<td align="left">Philharmonic Fondants</td>
+<td align="left">Derby / Holywood, County Down</td>
+<td align="left">2</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Steven</td>
+<td align="right">34</td>
+<td align="left">Marketer</td>
+<td align="right">8</td>
+<td align="right">1</td>
+<td align="left">Bonfire Night Cake</td>
+<td align="left">‘A Baker’s Lunch’ Cake</td>
+<td align="left">Watford, Hertfordshire</td>
+<td align="left">6</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Steven</td>
+<td align="right">34</td>
+<td align="left">Marketer</td>
+<td align="right">8</td>
+<td align="right">2</td>
+<td align="left">Amarpressi Biscuits</td>
+<td align="left">‘Check Bake’ Game</td>
+<td align="left">Watford, Hertfordshire</td>
+<td align="left">6</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Julia</td>
+<td align="right">21</td>
+<td align="left">Aviation Broker</td>
+<td align="right">8</td>
+<td align="right">3</td>
+<td align="left">Earl Grey Dried Fruit Teacakes</td>
+<td align="left">‘The Snail Under a Mushroom’ Bread Sculpture</td>
+<td align="left">Crawley, West Sussex</td>
+<td align="left">2</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Kate</td>
+<td align="right">29</td>
+<td align="left">Health and safety inspector</td>
+<td align="right">8</td>
+<td align="right">4</td>
+<td align="left">Salted Bay Caramel Millionaire Shortbreads</td>
+<td align="left">Sticky Toffee Apple Caramel Cake</td>
+<td align="left">Merseyside</td>
+<td align="left">6</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Sophie</td>
+<td align="right">33</td>
+<td align="left">Former army officer and trainee stuntwoman</td>
+<td align="right">8</td>
+<td align="right">5</td>
+<td align="left">Ginger, Fig and Honey Steamed School Pudding</td>
+<td align="left">Raspberry, Yuzu &amp; White Chocolate Bûche Trifle
+Terrine</td>
+<td align="left">West Molesey, Surrey</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Liam</td>
+<td align="right">19</td>
+<td align="left">Student</td>
+<td align="right">8</td>
+<td align="right">6</td>
+<td align="left">‘Standard FC’ Decorative Pies</td>
+<td align="left">‘Nan’s Sunday Dinner’ Pie</td>
+<td align="left">North London</td>
+<td align="left">4</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Steven</td>
+<td align="right">34</td>
+<td align="left">Marketer</td>
+<td align="right">8</td>
+<td align="right">7</td>
+<td align="left">Italian Style Cannoli</td>
+<td align="left">‘Sicilian-style’ Sfogliatelle</td>
+<td align="left">Watford, Hertfordshire</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Stacey</td>
+<td align="right">42</td>
+<td align="left">Former school teacher</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="left">Camembert &amp; Onion and Apple &amp; Blueberry
+Bedfordshire Clangers</td>
+<td align="left">‘Bright’ Lemon &amp; Orange Savoy Cake</td>
+<td align="left">Radlett, Hertfordshire</td>
+<td align="left">3</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Sophie</td>
+<td align="right">33</td>
+<td align="left">Former army officer and trainee stuntwoman</td>
+<td align="right">8</td>
+<td align="right">9</td>
+<td align="left">Strawberry &amp; Rhubarb and Chestnut &amp; Vanilla
+Choux Buns</td>
+<td align="left">‘Tutu with Opera Filling’ Meringue Centrepiece</td>
+<td align="left">West Molesey, Surrey</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Manon</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">9</td>
+<td align="right">1</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">3</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Rahul</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">9</td>
+<td align="right">2</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">2</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Rahul</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">9</td>
+<td align="right">3</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">4</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Dan</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">9</td>
+<td align="right">4</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Kim-Joy</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">9</td>
+<td align="right">5</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">4</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Briony</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">9</td>
+<td align="right">6</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Kim-Joy</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">9</td>
+<td align="right">7</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">6</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Ruby</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">9</td>
+<td align="right">8</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">3</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Ruby</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Michelle</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">10</td>
+<td align="right">1</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">6</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Alice</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">10</td>
+<td align="right">2</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Michael</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">10</td>
+<td align="right">3</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">6</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Steph</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">10</td>
+<td align="right">4</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">1</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Steph</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">10</td>
+<td align="right">5</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">4</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Steph</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">10</td>
+<td align="right">6</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">3</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Henry</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">10</td>
+<td align="right">7</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">3</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="even">
+<td align="left">Steph</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">10</td>
+<td align="right">8</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">4</td>
+<td align="left">STAR BAKER</td>
+</tr>
+<tr class="odd">
+<td align="left">Alice</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">10</td>
+<td align="right">9</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">4</td>
+<td align="left">STAR BAKER</td>
+</tr>
+</tbody>
+</table>
+<p>Some bakers repeatedly won Star Baker throughout the series, making
+their eventual win more predictable. For instance, Richard from Season 5
+won Star Baker an impressive five times, signaling him as a clear
+front-runner, even though he didn’t win the final. Similarly, Nadiya in
+Season 6 and Steph in Season 10 both had multiple Star Baker titles
+(Nadiya had three, Steph had four), marking them as favorites for the
+title. Nadiya went on to win her season, making her victory less
+surprising due to her consistent performance.</p>
+<pre class="r"><code>viewership = read_csv(&quot;/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/gbb_datasets/viewers.csv&quot;,
+           na = c(&quot;NA&quot;, &quot;.&quot;, &quot;&quot;)) %&gt;% 
+  janitor::clean_names() %&gt;% 
+  pivot_longer(
+    cols = series_1:series_10,
+    names_to = &quot;series&quot;,
+    values_to = &quot;viewership&quot;
+  )</code></pre>
+<pre><code>## Rows: 10 Columns: 11
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## dbl (11): Episode, Series 1, Series 2, Series 3, Series 4, Series 5, Series ...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>head(viewership, 10)</code></pre>
+<pre><code>## # A tibble: 10 × 3
+##    episode series    viewership
+##      &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;
+##  1       1 series_1        2.24
+##  2       1 series_2        3.1 
+##  3       1 series_3        3.85
+##  4       1 series_4        6.6 
+##  5       1 series_5        8.51
+##  6       1 series_6       11.6 
+##  7       1 series_7       13.6 
+##  8       1 series_8        9.46
+##  9       1 series_9        9.55
+## 10       1 series_10       9.62</code></pre>
+<pre class="r"><code>viewership %&gt;% 
+  filter(series == &quot;series_1&quot;) %&gt;% 
+  summarize(avg_viewership_1 = mean(viewership, na.rm = TRUE))</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##   avg_viewership_1
+##              &lt;dbl&gt;
+## 1             2.77</code></pre>
+<pre class="r"><code>viewership %&gt;% 
+  filter(series == &quot;series_5&quot;) %&gt;% 
+  summarize(avg_viewership_5 = mean(viewership, na.rm = TRUE))</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##   avg_viewership_5
+##              &lt;dbl&gt;
+## 1             10.0</code></pre>
+<p>The average viewership in Season 1 is 2.77, the average viewership in
+Season 5 is 10.0393.</p>
 </div>
 
 

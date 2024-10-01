@@ -50,7 +50,6 @@ Cranberry Bagels","Poynton, Cheshire","2","IN"
 "Ian",40,"Fundraiser for English Heritage",2,1,"Apple and Cinnamon Cupcakes","UNKNOWN","Dunstable, Bedfordshire","10","IN"
 "Janet",63,"Teacher of Modern Languages",2,1,"Raspberry and Cream Cupcakes","Chocolate Marble Cakewith Dark and White Chocolate Truffles","Formby, Liverpool","8","IN"
 "Jason",19,"Civil Engineering Student",2,1,"Lemon Meringue CupcakesApple and Cinnamon Cupcakes","UNKNOWN","Croydon","6","IN"
-"""Jo""",NA,NA,2,1,"Chocolate Orange CupcakesOrange and Cardamom Cupcakes","Chocolate and Strawberry Cake",NA,NA,NA
 "Keith",31,"House husband",2,1,"Earl Grey Cupcakes","Chocolate and Sour Cream Cake","Arlesey, Bedfordshire","12","OUT"
 "Mary-Anne",45,"Housewife",2,1,"Banoffee Cupcakes","Chocolate and Raspberry Opera cake","Kidderminster, Worcestershire","4","IN"
 "Robert",25,"Photographer",2,1,"Blackberry and Vanilla Cupcakeswith Liquorice Frosting","Genoise Layered Mousse Cakewith Chocolate Ganache","London","3","IN"
@@ -62,7 +61,6 @@ Cranberry Bagels","Poynton, Cheshire","2","IN"
 "Ian",40,"Fundraiser for English Heritage",2,2,"Stilton, Spinach and New Potato Quichewith Paprika and Walnut Pastry","UNKNOWN","Dunstable, Bedfordshire","2","IN"
 "Janet",63,"Teacher of Modern Languages",2,2,"Quiche Printanière","Red Fruit TartsChocolate and Cherry Tarts","Formby, Liverpool","8","IN"
 "Jason",19,"Civil Engineering Student",2,2,"Salmon and Pak Choi Quiche","Mint Chocolate Tarts Blueberry Bakewell Tarts","Croydon","3","STAR BAKER"
-"""Jo""",NA,NA,2,2,"Caramelised Onion, Gruyere and Thyme Quiche","Raspberry and Mascarpone Tarts with Lemon and Almond PastryHoney and Almond Tarts with Sweetcrust",NA,NA,NA
 "Mary-Anne",45,"Housewife",2,2,"Roasted Cauliflower, Cheese andCaramelised Onion Quiche","Butterscotch Brulée Tarts in Pecan PastryApple Rose Tarts","Kidderminster, Worcestershire","9","IN"
 "Robert",25,"Photographer",2,2,"Smoked Bacon and Kale Quiche","Chocolate, Fennel and Ginger TartAlmond, Creme Patissiere and Poached Pear Tart","London","5","IN"
 "Simon",31,"Rugby Coach",2,2,"Smoked Haddock and Watercress Quiche","Passion Fruit and Ricotta TartsSalted Chocolate, Stem Ginger and Mascarpone Cream Tarts","Norfolk","11","OUT"
@@ -73,7 +71,6 @@ Cranberry Bagels","Poynton, Cheshire","2","IN"
 "Ian",40,"Fundraiser for English Heritage",2,3,"Courgette, Caerphilly Cheese and Thyme Loaf","Walnut and Raisin RollsCracked Wheat Logs","Dunstable, Bedfordshire","10","OUT"
 "Janet",63,"Teacher of Modern Languages",2,3,"Zupfe Loaf with Gruyère Cheese","Apple and Walnut Granary Rolls Red Onion Cottage Rolls","Formby, Liverpool","8","IN"
 "Jason",19,"Civil Engineering Student",2,3,"Cheese and Onion Tear and Share Loaf","UNKNOWN","Croydon","7","IN"
-"""Jo""",NA,NA,2,3,"Stromboli flavored with Mozzarella, Ham, and Picante Pepper","Unknown",NA,NA,NA
 "Mary-Anne",45,"Housewife",2,3,"Ploughman's Loaf","Herb and Walnut BreadsChocolate and Chilli Buns","Kidderminster, Worcestershire","5","IN"
 "Robert",25,"Photographer",2,3,"Rye and Coriander Seed Loaf","Blueberry Brioche RollsLemon and Poppy Seed Rolls","London","4","IN"
 "Urvashi",40,"Head of Marketing",2,3,"Salt and Peppercorn Loaf","Chilli and Halloumi RollsLemon and Coriander Mini Loaves","Enfield, London","9","OUT"
@@ -87,28 +84,23 @@ Blackcurrant Macarons
 Almond Macarons","Formby, Liverpool","4","IN"
 "Jason",19,"Civil Engineering Student",2,4,"Lebkuchen","Mocktail Macarons
 (Mojito, Cranberry Cooler, and Pina Colada)","Croydon","1","STAR BAKER"
-"""Jo""",NA,NA,2,4,"Lavender Biscuits","Blueberry MacaronsCoconut MacaronsStrawberry Macarons",NA,NA,NA
 "Mary-Anne",45,"Housewife",2,4,"Melting Moments","Blackcurrant and Mint MacaronsGooseberry and Elderflower MacaronsHazelnut Macarons","Kidderminster, Worcestershire","2","IN"
 "Robert",25,"Photographer",2,4,"Chocolate and Ginger Oat Biscuits","Strawberry and Lime MacaronsLemon MacaronsChocolate and Cardamom Macarons","London","7","IN"
 "Yasmin",43,"Childminder",2,4,"Chocolate Chip and Pistachio Biscotti","Chocolate and Lime MacaronsCoffee and Walnut MacaronsPineapple and Coconut Macarons","West Kirby, The Wirral","6","IN"
 "Holly",31,"Advertising executive",2,5,"Stilton, Potato and Caramelised Onion Pie","Lime Meringue Pie","Leicester","4","IN"
 "Janet",63,"Teacher of Modern Languages",2,5,"Chicken and Chestnut Pie","Rhubarb Meringue Pie","Formby, Liverpool","1","STAR BAKER"
 "Jason",19,"Civil Engineering Student",2,5,"Brown Down Chicken Pie","Plum Meringue Pie","Croydon","7","OUT"
-"""Jo""",NA,NA,2,5,"Salmon and Asparagus Pie","Apple and Raspberry Meringue Pie",NA,NA,NA
 "Mary-Anne",45,"Housewife",2,5,"Chicken and Bacon Pie","Midnight Meringue","Kidderminster, Worcestershire","2","IN"
 "Robert",25,"Photographer",2,5,"Chicken and Mushroom Pie","Rhubarb and Custard Meringue Pie","London","3","OUT"
 "Yasmin",43,"Childminder",2,5,"Family Fish Pie","Peach and Raspberry Meringue Pie","West Kirby, The Wirral","5","IN"
 "Holly",31,"Advertising executive",2,6,"Father Christmas' Baked Cheesecake","Hansel and Gretel's Croquembouche","Leicester","3","IN"
 "Janet",63,"Teacher of Modern Languages",2,6,"Rhubarb and Ginger Baked Cheesecake","Orange and Nougatine Croquembouche","Formby, Liverpool","5","IN"
-"""Jo""",NA,NA,2,6,"Rum and Raisin Baked Cheesecake","Limoncello and White Chocolate Croquembouche",NA,NA,NA
 "Mary-Anne",45,"Housewife",2,6,"Tutti Fruitti Curd Baked Cheesecake","Orange and Praline Croquembouche with Cardamom Caramel","Kidderminster, Worcestershire","4","IN"
 "Yasmin",43,"Childminder",2,6,"Baked Amaretto Cheesecake","Rose Croquembouche","West Kirby, The Wirral","2","OUT"
 "Holly",31,"Advertising executive",2,7,"White Chocolate, Hazelnut and Raspberry Genoise Mousse Cake","Apricot, Macadamia and White Chocolate PinwheelsAlmond CroissantsApple, Raisin and Cinnamon Plaits","Leicester","1","IN"
 "Janet",63,"Teacher of Modern Languages",2,7,"Chocolate Amaretto Mousse Cake","Pain Aux RaisinPlain CroissantPain Au Chocolat","Formby, Liverpool","4","OUT"
-"""Jo""",NA,NA,2,7,"Raspberry & Strawberry Mousse Cake","Pain Aux RaisinChocolate TwistsBanana and Raisin Pastries",NA,NA,NA
 "Mary-Anne",45,"Housewife",2,7,"Chocolate and Orange Mousse Cake","Raspberry Rose DanishesPraline SpiralsAlsatian Plaited Danishes","Kidderminster, Worcestershire","2","IN"
 "Holly",31,"Advertising executive",2,8,"Banoffee Inspired Mille Feuille","Strawberry and Cream Meringue NestGooseberry and Elderflower 'Bakewell' TartsNeapolitan Ice-Cream Sandwich","Leicester","2","Runner-up"
-"""Jo""",NA,NA,2,8,"Raspberry and Blueberry Mille Feuille","Mini Victoria SandwichesRaspberry, White Chocolate and Pistachio Mini MeringuesMini Banoffee Pie with Banana Mousse",NA,NA,NA
 "Mary-Anne",45,"Housewife",2,8,"Lemon and Ginger Mille Feuille","Fruit Tarts with Elderflower CustardStrawberry and Rhubarb CheesecakesBlack Fruit Meringue with Everlasting Syllabub","Kidderminster, Worcestershire","3","Runner-up"
 "Brendan",63,"Recruitment consultant",3,1,"Plum, Sour Cherry & Walnut","UNKNOWN","Sutton Coldfield","10","IN"
 "Cathryn",27,"Shop assistant",3,1,"Apple, Hazelnut and Calvados","Hidden Cupcake Cake","Pease Pottage, West Sussex","5","IN"
@@ -577,3 +569,599 @@ Chantenay CarrotsChoux Pastry TomatoesCauliflower Cheese Scones","Great British 
 "Kate",29,"Health and safety inspector",8,10,"Roman Spelt, Coconut Kala Chana and Flower Breads","White Chocolate, Yuzu and Lychee Entremet","Merseyside","3","Runner-up"
 "Sophie",33,"Former army officer and trainee stuntwoman",8,10,"Spelt Boules, Mushroom Ciabatta and Orange Plaited Brioche","'Ode to the Honey Bee' Entremet","West Molesey, Surrey","2","WINNER"
 "Steven",34,"Marketer",8,10,"Spelt & Rye, Toasted Garlic & Fontina and Sweet Chocolate Breads","'Yin Yang' Entremet","Watford, Hertfordshire","1","Runner-up"
+"Lea",NA,NA,1,2,NA,NA,NA,NA,NA
+"Mark",NA,NA,1,2,NA,NA,NA,NA,NA
+"Annetha",NA,NA,1,3,NA,NA,NA,NA,NA
+"Lea",NA,NA,1,3,NA,NA,NA,NA,NA
+"Louise",NA,NA,1,3,NA,NA,NA,NA,NA
+"Mark",NA,NA,1,3,NA,NA,NA,NA,NA
+"Annetha",NA,NA,1,4,NA,NA,NA,NA,NA
+"Jonathan",NA,NA,1,4,NA,NA,NA,NA,NA
+"Lea",NA,NA,1,4,NA,NA,NA,NA,NA
+"Louise",NA,NA,1,4,NA,NA,NA,NA,NA
+"Mark",NA,NA,1,4,NA,NA,NA,NA,NA
+"Annetha",NA,NA,1,5,NA,NA,NA,NA,NA
+"David",NA,NA,1,5,NA,NA,NA,NA,NA
+"Jonathan",NA,NA,1,5,NA,NA,NA,NA,NA
+"Lea",NA,NA,1,5,NA,NA,NA,NA,NA
+"Louise",NA,NA,1,5,NA,NA,NA,NA,NA
+"Mark",NA,NA,1,5,NA,NA,NA,NA,NA
+"Annetha",NA,NA,1,6,NA,NA,NA,NA,NA
+"David",NA,NA,1,6,NA,NA,NA,NA,NA
+"Jasminder",NA,NA,1,6,NA,NA,NA,NA,NA
+"Jonathan",NA,NA,1,6,NA,NA,NA,NA,NA
+"Lea",NA,NA,1,6,NA,NA,NA,NA,NA
+"Louise",NA,NA,1,6,NA,NA,NA,NA,NA
+"Mark",NA,NA,1,6,NA,NA,NA,NA,NA
+"Joanne",NA,NA,2,1,NA,NA,NA,"11","IN"
+"Joanne",NA,NA,2,2,NA,NA,NA,"10","IN"
+"Keith",NA,NA,2,2,NA,NA,NA,NA,NA
+"Joanne",NA,NA,2,3,NA,NA,NA,"1","IN"
+"Keith",NA,NA,2,3,NA,NA,NA,NA,NA
+"Simon",NA,NA,2,3,NA,NA,NA,NA,NA
+"Joanne",NA,NA,2,4,NA,NA,NA,"8","IN"
+"Ian",NA,NA,2,4,NA,NA,NA,NA,NA
+"Keith",NA,NA,2,4,NA,NA,NA,NA,NA
+"Simon",NA,NA,2,4,NA,NA,NA,NA,NA
+"Urvashi",NA,NA,2,4,NA,NA,NA,NA,NA
+"Joanne",NA,NA,2,5,NA,NA,NA,"6","IN"
+"Ben",NA,NA,2,5,NA,NA,NA,NA,NA
+"Ian",NA,NA,2,5,NA,NA,NA,NA,NA
+"Keith",NA,NA,2,5,NA,NA,NA,NA,NA
+"Simon",NA,NA,2,5,NA,NA,NA,NA,NA
+"Urvashi",NA,NA,2,5,NA,NA,NA,NA,NA
+"Joanne",NA,NA,2,6,NA,NA,NA,"1","STAR BAKER"
+"Ben",NA,NA,2,6,NA,NA,NA,NA,NA
+"Ian",NA,NA,2,6,NA,NA,NA,NA,NA
+"Jason",NA,NA,2,6,NA,NA,NA,NA,NA
+"Keith",NA,NA,2,6,NA,NA,NA,NA,NA
+"Robert",NA,NA,2,6,NA,NA,NA,NA,NA
+"Simon",NA,NA,2,6,NA,NA,NA,NA,NA
+"Urvashi",NA,NA,2,6,NA,NA,NA,NA,NA
+"Joanne",NA,NA,2,7,NA,NA,NA,"3","IN"
+"Ben",NA,NA,2,7,NA,NA,NA,NA,NA
+"Ian",NA,NA,2,7,NA,NA,NA,NA,NA
+"Jason",NA,NA,2,7,NA,NA,NA,NA,NA
+"Keith",NA,NA,2,7,NA,NA,NA,NA,NA
+"Robert",NA,NA,2,7,NA,NA,NA,NA,NA
+"Simon",NA,NA,2,7,NA,NA,NA,NA,NA
+"Urvashi",NA,NA,2,7,NA,NA,NA,NA,NA
+"Yasmin",NA,NA,2,7,NA,NA,NA,NA,NA
+"Joanne",NA,NA,2,8,NA,NA,NA,"1","WINNER"
+"Ben",NA,NA,2,8,NA,NA,NA,NA,NA
+"Ian",NA,NA,2,8,NA,NA,NA,NA,NA
+"Janet",NA,NA,2,8,NA,NA,NA,NA,NA
+"Jason",NA,NA,2,8,NA,NA,NA,NA,NA
+"Keith",NA,NA,2,8,NA,NA,NA,NA,NA
+"Robert",NA,NA,2,8,NA,NA,NA,NA,NA
+"Simon",NA,NA,2,8,NA,NA,NA,NA,NA
+"Urvashi",NA,NA,2,8,NA,NA,NA,NA,NA
+"Yasmin",NA,NA,2,8,NA,NA,NA,NA,NA
+"Natasha",NA,NA,3,2,NA,NA,NA,NA,NA
+"Natasha",NA,NA,3,3,NA,NA,NA,NA,NA
+"Peter",NA,NA,3,3,NA,NA,NA,NA,NA
+"Natasha",NA,NA,3,4,NA,NA,NA,NA,NA
+"Peter",NA,NA,3,4,NA,NA,NA,NA,NA
+"Victoria",NA,NA,3,4,NA,NA,NA,NA,NA
+"Natasha",NA,NA,3,5,NA,NA,NA,NA,NA
+"Peter",NA,NA,3,5,NA,NA,NA,NA,NA
+"Stuart",NA,NA,3,5,NA,NA,NA,NA,NA
+"Victoria",NA,NA,3,5,NA,NA,NA,NA,NA
+"Manisha",NA,NA,3,6,NA,NA,NA,NA,NA
+"Natasha",NA,NA,3,6,NA,NA,NA,NA,NA
+"Peter",NA,NA,3,6,NA,NA,NA,NA,NA
+"Stuart",NA,NA,3,6,NA,NA,NA,NA,NA
+"Victoria",NA,NA,3,6,NA,NA,NA,NA,NA
+"Manisha",NA,NA,3,7,NA,NA,NA,NA,NA
+"Natasha",NA,NA,3,7,NA,NA,NA,NA,NA
+"Peter",NA,NA,3,7,NA,NA,NA,NA,NA
+"Stuart",NA,NA,3,7,NA,NA,NA,NA,NA
+"Victoria",NA,NA,3,7,NA,NA,NA,NA,NA
+"Manisha",NA,NA,3,8,NA,NA,NA,NA,NA
+"Natasha",NA,NA,3,8,NA,NA,NA,NA,NA
+"Peter",NA,NA,3,8,NA,NA,NA,NA,NA
+"Ryan",NA,NA,3,8,NA,NA,NA,NA,NA
+"Sarah-Jane",NA,NA,3,8,NA,NA,NA,NA,NA
+"Stuart",NA,NA,3,8,NA,NA,NA,NA,NA
+"Victoria",NA,NA,3,8,NA,NA,NA,NA,NA
+"Cathryn",NA,NA,3,9,NA,NA,NA,NA,NA
+"Manisha",NA,NA,3,9,NA,NA,NA,NA,NA
+"Natasha",NA,NA,3,9,NA,NA,NA,NA,NA
+"Peter",NA,NA,3,9,NA,NA,NA,NA,NA
+"Ryan",NA,NA,3,9,NA,NA,NA,NA,NA
+"Sarah-Jane",NA,NA,3,9,NA,NA,NA,NA,NA
+"Stuart",NA,NA,3,9,NA,NA,NA,NA,NA
+"Victoria",NA,NA,3,9,NA,NA,NA,NA,NA
+"Cathryn",NA,NA,3,10,NA,NA,NA,NA,NA
+"Danny",NA,NA,3,10,NA,NA,NA,NA,NA
+"Manisha",NA,NA,3,10,NA,NA,NA,NA,NA
+"Natasha",NA,NA,3,10,NA,NA,NA,NA,NA
+"Peter",NA,NA,3,10,NA,NA,NA,NA,NA
+"Ryan",NA,NA,3,10,NA,NA,NA,NA,NA
+"Sarah-Jane",NA,NA,3,10,NA,NA,NA,NA,NA
+"Stuart",NA,NA,3,10,NA,NA,NA,NA,NA
+"Victoria",NA,NA,3,10,NA,NA,NA,NA,NA
+"Toby",NA,NA,4,2,NA,NA,NA,NA,NA
+"Lucy",NA,NA,4,3,NA,NA,NA,NA,NA
+"Toby",NA,NA,4,3,NA,NA,NA,NA,NA
+"Deborah",NA,NA,4,4,NA,NA,NA,NA,NA
+"Lucy",NA,NA,4,4,NA,NA,NA,NA,NA
+"Mark",NA,NA,4,4,NA,NA,NA,NA,NA
+"Toby",NA,NA,4,4,NA,NA,NA,NA,NA
+"Ali",NA,NA,4,5,NA,NA,NA,NA,NA
+"Deborah",NA,NA,4,5,NA,NA,NA,NA,NA
+"Lucy",NA,NA,4,5,NA,NA,NA,NA,NA
+"Mark",NA,NA,4,5,NA,NA,NA,NA,NA
+"Toby",NA,NA,4,5,NA,NA,NA,NA,NA
+"Ali",NA,NA,4,6,NA,NA,NA,NA,NA
+"Deborah",NA,NA,4,6,NA,NA,NA,NA,NA
+"Lucy",NA,NA,4,6,NA,NA,NA,NA,NA
+"Mark",NA,NA,4,6,NA,NA,NA,NA,NA
+"Robert",NA,NA,4,6,NA,NA,NA,NA,NA
+"Toby",NA,NA,4,6,NA,NA,NA,NA,NA
+"Ali",NA,NA,4,7,NA,NA,NA,NA,NA
+"Deborah",NA,NA,4,7,NA,NA,NA,NA,NA
+"Howard",NA,NA,4,7,NA,NA,NA,NA,NA
+"Lucy",NA,NA,4,7,NA,NA,NA,NA,NA
+"Mark",NA,NA,4,7,NA,NA,NA,NA,NA
+"Robert",NA,NA,4,7,NA,NA,NA,NA,NA
+"Toby",NA,NA,4,7,NA,NA,NA,NA,NA
+"Ali",NA,NA,4,8,NA,NA,NA,NA,NA
+"Deborah",NA,NA,4,8,NA,NA,NA,NA,NA
+"Glenn",NA,NA,4,8,NA,NA,NA,NA,NA
+"Howard",NA,NA,4,8,NA,NA,NA,NA,NA
+"Lucy",NA,NA,4,8,NA,NA,NA,NA,NA
+"Mark",NA,NA,4,8,NA,NA,NA,NA,NA
+"Robert",NA,NA,4,8,NA,NA,NA,NA,NA
+"Toby",NA,NA,4,8,NA,NA,NA,NA,NA
+"Ali",NA,NA,4,9,NA,NA,NA,NA,NA
+"Christine",NA,NA,4,9,NA,NA,NA,NA,NA
+"Deborah",NA,NA,4,9,NA,NA,NA,NA,NA
+"Glenn",NA,NA,4,9,NA,NA,NA,NA,NA
+"Howard",NA,NA,4,9,NA,NA,NA,NA,NA
+"Lucy",NA,NA,4,9,NA,NA,NA,NA,NA
+"Mark",NA,NA,4,9,NA,NA,NA,NA,NA
+"Robert",NA,NA,4,9,NA,NA,NA,NA,NA
+"Toby",NA,NA,4,9,NA,NA,NA,NA,NA
+"Ali",NA,NA,4,10,NA,NA,NA,NA,NA
+"Beca",NA,NA,4,10,NA,NA,NA,NA,NA
+"Christine",NA,NA,4,10,NA,NA,NA,NA,NA
+"Deborah",NA,NA,4,10,NA,NA,NA,NA,NA
+"Glenn",NA,NA,4,10,NA,NA,NA,NA,NA
+"Howard",NA,NA,4,10,NA,NA,NA,NA,NA
+"Lucy",NA,NA,4,10,NA,NA,NA,NA,NA
+"Mark",NA,NA,4,10,NA,NA,NA,NA,NA
+"Robert",NA,NA,4,10,NA,NA,NA,NA,NA
+"Toby",NA,NA,4,10,NA,NA,NA,NA,NA
+"Claire",NA,NA,5,2,NA,NA,NA,NA,NA
+"Claire",NA,NA,5,3,NA,NA,NA,NA,NA
+"Enwezor",NA,NA,5,3,NA,NA,NA,NA,NA
+"Claire",NA,NA,5,4,NA,NA,NA,NA,NA
+"Enwezor",NA,NA,5,4,NA,NA,NA,NA,NA
+"Jordan",NA,NA,5,4,NA,NA,NA,NA,NA
+"Diana",NA,NA,5,5,NA,NA,NA,NA,"WD"
+"Claire",NA,NA,5,5,NA,NA,NA,NA,NA
+"Enwezor",NA,NA,5,5,NA,NA,NA,NA,NA
+"Iain",NA,NA,5,5,NA,NA,NA,NA,NA
+"Jordan",NA,NA,5,5,NA,NA,NA,NA,NA
+"Diana",NA,NA,5,6,NA,NA,NA,NA,"IN"
+"Claire",NA,NA,5,6,NA,NA,NA,NA,NA
+"Enwezor",NA,NA,5,6,NA,NA,NA,NA,NA
+"Iain",NA,NA,5,6,NA,NA,NA,NA,NA
+"Jordan",NA,NA,5,6,NA,NA,NA,NA,NA
+"Norman",NA,NA,5,6,NA,NA,NA,NA,NA
+"Diana",NA,NA,5,7,NA,NA,NA,NA,"IN"
+"Claire",NA,NA,5,7,NA,NA,NA,NA,NA
+"Enwezor",NA,NA,5,7,NA,NA,NA,NA,NA
+"Iain",NA,NA,5,7,NA,NA,NA,NA,NA
+"Jordan",NA,NA,5,7,NA,NA,NA,NA,NA
+"Norman",NA,NA,5,7,NA,NA,NA,NA,NA
+"Diana",NA,NA,5,8,NA,NA,NA,NA,"IN"
+"Claire",NA,NA,5,8,NA,NA,NA,NA,NA
+"Enwezor",NA,NA,5,8,NA,NA,NA,NA,NA
+"Iain",NA,NA,5,8,NA,NA,NA,NA,NA
+"Jordan",NA,NA,5,8,NA,NA,NA,NA,NA
+"Kate",NA,NA,5,8,NA,NA,NA,NA,NA
+"Norman",NA,NA,5,8,NA,NA,NA,NA,NA
+"Diana",NA,NA,5,9,NA,NA,NA,NA,"IN"
+"Claire",NA,NA,5,9,NA,NA,NA,NA,NA
+"Enwezor",NA,NA,5,9,NA,NA,NA,NA,NA
+"Iain",NA,NA,5,9,NA,NA,NA,NA,NA
+"Jordan",NA,NA,5,9,NA,NA,NA,NA,NA
+"Kate",NA,NA,5,9,NA,NA,NA,NA,NA
+"Martha",NA,NA,5,9,NA,NA,NA,NA,NA
+"Norman",NA,NA,5,9,NA,NA,NA,NA,NA
+"Diana",NA,NA,5,10,NA,NA,NA,NA,"IN"
+"Chetna",NA,NA,5,10,NA,NA,NA,NA,NA
+"Claire",NA,NA,5,10,NA,NA,NA,NA,NA
+"Enwezor",NA,NA,5,10,NA,NA,NA,NA,NA
+"Iain",NA,NA,5,10,NA,NA,NA,NA,NA
+"Jordan",NA,NA,5,10,NA,NA,NA,NA,NA
+"Kate",NA,NA,5,10,NA,NA,NA,NA,NA
+"Martha",NA,NA,5,10,NA,NA,NA,NA,NA
+"Norman",NA,NA,5,10,NA,NA,NA,NA,NA
+"Stu",NA,NA,6,2,NA,NA,NA,NA,NA
+"Marie",NA,NA,6,3,NA,NA,NA,NA,NA
+"Stu",NA,NA,6,3,NA,NA,NA,NA,NA
+"Dorret",NA,NA,6,4,NA,NA,NA,NA,NA
+"Marie",NA,NA,6,4,NA,NA,NA,NA,NA
+"Stu",NA,NA,6,4,NA,NA,NA,NA,NA
+"Dorret",NA,NA,6,5,NA,NA,NA,NA,NA
+"Marie",NA,NA,6,5,NA,NA,NA,NA,NA
+"Sandy",NA,NA,6,5,NA,NA,NA,NA,NA
+"Stu",NA,NA,6,5,NA,NA,NA,NA,NA
+"Dorret",NA,NA,6,6,NA,NA,NA,NA,NA
+"Marie",NA,NA,6,6,NA,NA,NA,NA,NA
+"Sandy",NA,NA,6,6,NA,NA,NA,NA,NA
+"Stu",NA,NA,6,6,NA,NA,NA,NA,NA
+"Ugnė",NA,NA,6,6,NA,NA,NA,NA,NA
+"Alvin",NA,NA,6,7,NA,NA,NA,NA,NA
+"Dorret",NA,NA,6,7,NA,NA,NA,NA,NA
+"Marie",NA,NA,6,7,NA,NA,NA,NA,NA
+"Sandy",NA,NA,6,7,NA,NA,NA,NA,NA
+"Stu",NA,NA,6,7,NA,NA,NA,NA,NA
+"Ugnė",NA,NA,6,7,NA,NA,NA,NA,NA
+"Alvin",NA,NA,6,8,NA,NA,NA,NA,NA
+"Dorret",NA,NA,6,8,NA,NA,NA,NA,NA
+"Marie",NA,NA,6,8,NA,NA,NA,NA,NA
+"Mat",NA,NA,6,8,NA,NA,NA,NA,NA
+"Sandy",NA,NA,6,8,NA,NA,NA,NA,NA
+"Stu",NA,NA,6,8,NA,NA,NA,NA,NA
+"Ugnė",NA,NA,6,8,NA,NA,NA,NA,NA
+"Alvin",NA,NA,6,9,NA,NA,NA,NA,NA
+"Dorret",NA,NA,6,9,NA,NA,NA,NA,NA
+"Marie",NA,NA,6,9,NA,NA,NA,NA,NA
+"Mat",NA,NA,6,9,NA,NA,NA,NA,NA
+"Paul",NA,NA,6,9,NA,NA,NA,NA,NA
+"Sandy",NA,NA,6,9,NA,NA,NA,NA,NA
+"Stu",NA,NA,6,9,NA,NA,NA,NA,NA
+"Ugnė",NA,NA,6,9,NA,NA,NA,NA,NA
+"Alvin",NA,NA,6,10,NA,NA,NA,NA,NA
+"Dorret",NA,NA,6,10,NA,NA,NA,NA,NA
+"Flora",NA,NA,6,10,NA,NA,NA,NA,NA
+"Marie",NA,NA,6,10,NA,NA,NA,NA,NA
+"Mat",NA,NA,6,10,NA,NA,NA,NA,NA
+"Paul",NA,NA,6,10,NA,NA,NA,NA,NA
+"Sandy",NA,NA,6,10,NA,NA,NA,NA,NA
+"Stu",NA,NA,6,10,NA,NA,NA,NA,NA
+"Ugnė",NA,NA,6,10,NA,NA,NA,NA,NA
+"Lee",NA,NA,7,2,NA,NA,NA,NA,NA
+"Lee",NA,NA,7,3,NA,NA,NA,NA,NA
+"Louise",NA,NA,7,3,NA,NA,NA,NA,NA
+"Lee",NA,NA,7,4,NA,NA,NA,NA,NA
+"Louise",NA,NA,7,4,NA,NA,NA,NA,NA
+"Michael",NA,NA,7,4,NA,NA,NA,NA,NA
+"Kate",NA,NA,7,5,NA,NA,NA,NA,NA
+"Lee",NA,NA,7,5,NA,NA,NA,NA,NA
+"Louise",NA,NA,7,5,NA,NA,NA,NA,NA
+"Michael",NA,NA,7,5,NA,NA,NA,NA,NA
+"Kate",NA,NA,7,6,NA,NA,NA,NA,NA
+"Lee",NA,NA,7,6,NA,NA,NA,NA,NA
+"Louise",NA,NA,7,6,NA,NA,NA,NA,NA
+"Michael",NA,NA,7,6,NA,NA,NA,NA,NA
+"Val",NA,NA,7,6,NA,NA,NA,NA,NA
+"Kate",NA,NA,7,7,NA,NA,NA,NA,NA
+"Lee",NA,NA,7,7,NA,NA,NA,NA,NA
+"Louise",NA,NA,7,7,NA,NA,NA,NA,NA
+"Michael",NA,NA,7,7,NA,NA,NA,NA,NA
+"Rav",NA,NA,7,7,NA,NA,NA,NA,NA
+"Val",NA,NA,7,7,NA,NA,NA,NA,NA
+"Kate",NA,NA,7,8,NA,NA,NA,NA,NA
+"Lee",NA,NA,7,8,NA,NA,NA,NA,NA
+"Louise",NA,NA,7,8,NA,NA,NA,NA,NA
+"Michael",NA,NA,7,8,NA,NA,NA,NA,NA
+"Rav",NA,NA,7,8,NA,NA,NA,NA,NA
+"Tom",NA,NA,7,8,NA,NA,NA,NA,NA
+"Val",NA,NA,7,8,NA,NA,NA,NA,NA
+"Benjamina",NA,NA,7,9,NA,NA,NA,NA,NA
+"Kate",NA,NA,7,9,NA,NA,NA,NA,NA
+"Lee",NA,NA,7,9,NA,NA,NA,NA,NA
+"Louise",NA,NA,7,9,NA,NA,NA,NA,NA
+"Michael",NA,NA,7,9,NA,NA,NA,NA,NA
+"Rav",NA,NA,7,9,NA,NA,NA,NA,NA
+"Tom",NA,NA,7,9,NA,NA,NA,NA,NA
+"Val",NA,NA,7,9,NA,NA,NA,NA,NA
+"Benjamina",NA,NA,7,10,NA,NA,NA,NA,NA
+"Kate",NA,NA,7,10,NA,NA,NA,NA,NA
+"Lee",NA,NA,7,10,NA,NA,NA,NA,NA
+"Louise",NA,NA,7,10,NA,NA,NA,NA,NA
+"Michael",NA,NA,7,10,NA,NA,NA,NA,NA
+"Rav",NA,NA,7,10,NA,NA,NA,NA,NA
+"Selasi",NA,NA,7,10,NA,NA,NA,NA,NA
+"Tom",NA,NA,7,10,NA,NA,NA,NA,NA
+"Val",NA,NA,7,10,NA,NA,NA,NA,NA
+"Peter",NA,NA,8,2,NA,NA,NA,NA,NA
+"Chris",NA,NA,8,3,NA,NA,NA,NA,NA
+"Peter",NA,NA,8,3,NA,NA,NA,NA,NA
+"Chris",NA,NA,8,4,NA,NA,NA,NA,NA
+"Flo",NA,NA,8,4,NA,NA,NA,NA,NA
+"Peter",NA,NA,8,4,NA,NA,NA,NA,NA
+"Chris",NA,NA,8,5,NA,NA,NA,NA,NA
+"Flo",NA,NA,8,5,NA,NA,NA,NA,NA
+"Peter",NA,NA,8,5,NA,NA,NA,NA,NA
+"Tom",NA,NA,8,5,NA,NA,NA,NA,NA
+"Chris",NA,NA,8,6,NA,NA,NA,NA,NA
+"Flo",NA,NA,8,6,NA,NA,NA,NA,NA
+"James",NA,NA,8,6,NA,NA,NA,NA,NA
+"Peter",NA,NA,8,6,NA,NA,NA,NA,NA
+"Tom",NA,NA,8,6,NA,NA,NA,NA,NA
+"Chris",NA,NA,8,7,NA,NA,NA,NA,NA
+"Flo",NA,NA,8,7,NA,NA,NA,NA,NA
+"James",NA,NA,8,7,NA,NA,NA,NA,NA
+"Julia",NA,NA,8,7,NA,NA,NA,NA,NA
+"Peter",NA,NA,8,7,NA,NA,NA,NA,NA
+"Tom",NA,NA,8,7,NA,NA,NA,NA,NA
+"Chris",NA,NA,8,8,NA,NA,NA,NA,NA
+"Flo",NA,NA,8,8,NA,NA,NA,NA,NA
+"James",NA,NA,8,8,NA,NA,NA,NA,NA
+"Julia",NA,NA,8,8,NA,NA,NA,NA,NA
+"Peter",NA,NA,8,8,NA,NA,NA,NA,NA
+"Tom",NA,NA,8,8,NA,NA,NA,NA,NA
+"Yan",NA,NA,8,8,NA,NA,NA,NA,NA
+"Chris",NA,NA,8,9,NA,NA,NA,NA,NA
+"Flo",NA,NA,8,9,NA,NA,NA,NA,NA
+"James",NA,NA,8,9,NA,NA,NA,NA,NA
+"Julia",NA,NA,8,9,NA,NA,NA,NA,NA
+"Liam",NA,NA,8,9,NA,NA,NA,NA,NA
+"Peter",NA,NA,8,9,NA,NA,NA,NA,NA
+"Tom",NA,NA,8,9,NA,NA,NA,NA,NA
+"Yan",NA,NA,8,9,NA,NA,NA,NA,NA
+"Chris",NA,NA,8,10,NA,NA,NA,NA,NA
+"Flo",NA,NA,8,10,NA,NA,NA,NA,NA
+"James",NA,NA,8,10,NA,NA,NA,NA,NA
+"Julia",NA,NA,8,10,NA,NA,NA,NA,NA
+"Liam",NA,NA,8,10,NA,NA,NA,NA,NA
+"Peter",NA,NA,8,10,NA,NA,NA,NA,NA
+"Stacey",NA,NA,8,10,NA,NA,NA,NA,NA
+"Tom",NA,NA,8,10,NA,NA,NA,NA,NA
+"Yan",NA,NA,8,10,NA,NA,NA,NA,NA
+"Antony",NA,NA,9,1,NA,NA,NA,"12","IN"
+"Briony",NA,NA,9,1,NA,NA,NA,"2","IN"
+"Dan",NA,NA,9,1,NA,NA,NA,"4","IN"
+"Jon",NA,NA,9,1,NA,NA,NA,"5","IN"
+"Karen",NA,NA,9,1,NA,NA,NA,"6","IN"
+"Kim-Joy",NA,NA,9,1,NA,NA,NA,"10","IN"
+"Luke",NA,NA,9,1,NA,NA,NA,"8","IN"
+"Rahul",NA,NA,9,1,NA,NA,NA,"7","IN"
+"Ruby",NA,NA,9,1,NA,NA,NA,"1","IN"
+"Terry",NA,NA,9,1,NA,NA,NA,"9","IN"
+"Imelda",NA,NA,9,1,NA,NA,NA,"11","OUT"
+"Manon",NA,NA,9,1,NA,NA,NA,"3","STAR BAKER"
+"Antony",NA,NA,9,2,NA,NA,NA,"9","IN"
+"Briony",NA,NA,9,2,NA,NA,NA,"5","IN"
+"Dan",NA,NA,9,2,NA,NA,NA,"3","IN"
+"Jon",NA,NA,9,2,NA,NA,NA,"1","IN"
+"Karen",NA,NA,9,2,NA,NA,NA,"11","IN"
+"Kim-Joy",NA,NA,9,2,NA,NA,NA,"4","IN"
+"Manon",NA,NA,9,2,NA,NA,NA,"6","IN"
+"Ruby",NA,NA,9,2,NA,NA,NA,"10","IN"
+"Terry",NA,NA,9,2,NA,NA,NA,"8","IN"
+"Luke",NA,NA,9,2,NA,NA,NA,"7","OUT"
+"Rahul",NA,NA,9,2,NA,NA,NA,"2","STAR BAKER"
+"Imelda",NA,NA,9,2,NA,NA,NA,NA,NA
+"Briony",NA,NA,9,3,NA,NA,NA,"9","IN"
+"Dan",NA,NA,9,3,NA,NA,NA,"6","IN"
+"Jon",NA,NA,9,3,NA,NA,NA,"2","IN"
+"Karen",NA,NA,9,3,NA,NA,NA,"5","IN"
+"Kim-Joy",NA,NA,9,3,NA,NA,NA,"10","IN"
+"Manon",NA,NA,9,3,NA,NA,NA,"3","IN"
+"Ruby",NA,NA,9,3,NA,NA,NA,"7","IN"
+"Terry",NA,NA,9,3,NA,NA,NA,"1","IN"
+"Antony",NA,NA,9,3,NA,NA,NA,"8","OUT"
+"Rahul",NA,NA,9,3,NA,NA,NA,"4","STAR BAKER"
+"Imelda",NA,NA,9,3,NA,NA,NA,NA,NA
+"Luke",NA,NA,9,3,NA,NA,NA,NA,NA
+"Terry",NA,NA,9,4,NA,NA,NA,NA,"[a]"
+"Briony",NA,NA,9,4,NA,NA,NA,"5","IN"
+"Jon",NA,NA,9,4,NA,NA,NA,"3","IN"
+"Karen",NA,NA,9,4,NA,NA,NA,"7","IN"
+"Kim-Joy",NA,NA,9,4,NA,NA,NA,"6","IN"
+"Manon",NA,NA,9,4,NA,NA,NA,"8","IN"
+"Rahul",NA,NA,9,4,NA,NA,NA,"4","IN"
+"Ruby",NA,NA,9,4,NA,NA,NA,"2","IN"
+"Dan",NA,NA,9,4,NA,NA,NA,"1","STAR BAKER"
+"Antony",NA,NA,9,4,NA,NA,NA,NA,NA
+"Imelda",NA,NA,9,4,NA,NA,NA,NA,NA
+"Luke",NA,NA,9,4,NA,NA,NA,NA,NA
+"Briony",NA,NA,9,5,NA,NA,NA,"6","IN"
+"Dan",NA,NA,9,5,NA,NA,NA,"2","IN"
+"Jon",NA,NA,9,5,NA,NA,NA,"7","IN"
+"Manon",NA,NA,9,5,NA,NA,NA,"5","IN"
+"Rahul",NA,NA,9,5,NA,NA,NA,"3","IN"
+"Ruby",NA,NA,9,5,NA,NA,NA,"1","IN"
+"Karen",NA,NA,9,5,NA,NA,NA,"9","OUT"
+"Terry",NA,NA,9,5,NA,NA,NA,"8","OUT"
+"Kim-Joy",NA,NA,9,5,NA,NA,NA,"4","STAR BAKER"
+"Antony",NA,NA,9,5,NA,NA,NA,NA,NA
+"Imelda",NA,NA,9,5,NA,NA,NA,NA,NA
+"Luke",NA,NA,9,5,NA,NA,NA,NA,NA
+"Jon",NA,NA,9,6,NA,NA,NA,"2","IN"
+"Kim-Joy",NA,NA,9,6,NA,NA,NA,"5","IN"
+"Manon",NA,NA,9,6,NA,NA,NA,"4","IN"
+"Rahul",NA,NA,9,6,NA,NA,NA,"3","IN"
+"Ruby",NA,NA,9,6,NA,NA,NA,"7","IN"
+"Dan",NA,NA,9,6,NA,NA,NA,"6","OUT"
+"Briony",NA,NA,9,6,NA,NA,NA,"1","STAR BAKER"
+"Antony",NA,NA,9,6,NA,NA,NA,NA,NA
+"Imelda",NA,NA,9,6,NA,NA,NA,NA,NA
+"Karen",NA,NA,9,6,NA,NA,NA,NA,NA
+"Luke",NA,NA,9,6,NA,NA,NA,NA,NA
+"Terry",NA,NA,9,6,NA,NA,NA,NA,NA
+"Briony",NA,NA,9,7,NA,NA,NA,"5","IN"
+"Manon",NA,NA,9,7,NA,NA,NA,"2","IN"
+"Rahul",NA,NA,9,7,NA,NA,NA,"1","IN"
+"Ruby",NA,NA,9,7,NA,NA,NA,"3","IN"
+"Jon",NA,NA,9,7,NA,NA,NA,"4","OUT"
+"Kim-Joy",NA,NA,9,7,NA,NA,NA,"6","STAR BAKER"
+"Antony",NA,NA,9,7,NA,NA,NA,NA,NA
+"Dan",NA,NA,9,7,NA,NA,NA,NA,NA
+"Imelda",NA,NA,9,7,NA,NA,NA,NA,NA
+"Karen",NA,NA,9,7,NA,NA,NA,NA,NA
+"Luke",NA,NA,9,7,NA,NA,NA,NA,NA
+"Terry",NA,NA,9,7,NA,NA,NA,NA,NA
+"Briony",NA,NA,9,8,NA,NA,NA,"1","IN"
+"Kim-Joy",NA,NA,9,8,NA,NA,NA,"2","IN"
+"Rahul",NA,NA,9,8,NA,NA,NA,"5","IN"
+"Manon",NA,NA,9,8,NA,NA,NA,"4","OUT"
+"Ruby",NA,NA,9,8,NA,NA,NA,"3","STAR BAKER"
+"Antony",NA,NA,9,8,NA,NA,NA,NA,NA
+"Dan",NA,NA,9,8,NA,NA,NA,NA,NA
+"Imelda",NA,NA,9,8,NA,NA,NA,NA,NA
+"Jon",NA,NA,9,8,NA,NA,NA,NA,NA
+"Karen",NA,NA,9,8,NA,NA,NA,NA,NA
+"Luke",NA,NA,9,8,NA,NA,NA,NA,NA
+"Terry",NA,NA,9,8,NA,NA,NA,NA,NA
+"Kim-Joy",NA,NA,9,9,NA,NA,NA,"2","IN"
+"Rahul",NA,NA,9,9,NA,NA,NA,"4","IN"
+"Briony",NA,NA,9,9,NA,NA,NA,"3","OUT"
+"Ruby",NA,NA,9,9,NA,NA,NA,"1","STAR BAKER"
+"Antony",NA,NA,9,9,NA,NA,NA,NA,NA
+"Dan",NA,NA,9,9,NA,NA,NA,NA,NA
+"Imelda",NA,NA,9,9,NA,NA,NA,NA,NA
+"Jon",NA,NA,9,9,NA,NA,NA,NA,NA
+"Karen",NA,NA,9,9,NA,NA,NA,NA,NA
+"Luke",NA,NA,9,9,NA,NA,NA,NA,NA
+"Manon",NA,NA,9,9,NA,NA,NA,NA,NA
+"Terry",NA,NA,9,9,NA,NA,NA,NA,NA
+"Kim-Joy",NA,NA,9,10,NA,NA,NA,"1","Runner-up"
+"Ruby",NA,NA,9,10,NA,NA,NA,"3","Runner-up"
+"Rahul",NA,NA,9,10,NA,NA,NA,"2","WINNER"
+"Antony",NA,NA,9,10,NA,NA,NA,NA,NA
+"Briony",NA,NA,9,10,NA,NA,NA,NA,NA
+"Dan",NA,NA,9,10,NA,NA,NA,NA,NA
+"Imelda",NA,NA,9,10,NA,NA,NA,NA,NA
+"Jon",NA,NA,9,10,NA,NA,NA,NA,NA
+"Karen",NA,NA,9,10,NA,NA,NA,NA,NA
+"Luke",NA,NA,9,10,NA,NA,NA,NA,NA
+"Manon",NA,NA,9,10,NA,NA,NA,NA,NA
+"Terry",NA,NA,9,10,NA,NA,NA,NA,NA
+"Alice",NA,NA,10,1,NA,NA,NA,"5","IN"
+"Amelia",NA,NA,10,1,NA,NA,NA,"4","IN"
+"David",NA,NA,10,1,NA,NA,NA,"10","IN"
+"Helena",NA,NA,10,1,NA,NA,NA,"12","IN"
+"Henry",NA,NA,10,1,NA,NA,NA,"1","IN"
+"Jamie",NA,NA,10,1,NA,NA,NA,"13","IN"
+"Michael",NA,NA,10,1,NA,NA,NA,"11","IN"
+"Phil",NA,NA,10,1,NA,NA,NA,"8","IN"
+"Priya",NA,NA,10,1,NA,NA,NA,"7","IN"
+"Rosie",NA,NA,10,1,NA,NA,NA,"2","IN"
+"Steph",NA,NA,10,1,NA,NA,NA,"3","IN"
+"Dan",NA,NA,10,1,NA,NA,NA,"9","OUT"
+"Michelle",NA,NA,10,1,NA,NA,NA,"6","STAR BAKER"
+"Amelia",NA,NA,10,2,NA,NA,NA,"9","IN"
+"David",NA,NA,10,2,NA,NA,NA,"2","IN"
+"Helena",NA,NA,10,2,NA,NA,NA,"12","IN"
+"Henry",NA,NA,10,2,NA,NA,NA,"6","IN"
+"Michael",NA,NA,10,2,NA,NA,NA,"4","IN"
+"Michelle",NA,NA,10,2,NA,NA,NA,"8","IN"
+"Phil",NA,NA,10,2,NA,NA,NA,"3","IN"
+"Priya",NA,NA,10,2,NA,NA,NA,"7","IN"
+"Rosie",NA,NA,10,2,NA,NA,NA,"5","IN"
+"Steph",NA,NA,10,2,NA,NA,NA,"10","IN"
+"Jamie",NA,NA,10,2,NA,NA,NA,"11","OUT"
+"Alice",NA,NA,10,2,NA,NA,NA,"1","STAR BAKER"
+"Dan",NA,NA,10,2,NA,NA,NA,NA,NA
+"Alice",NA,NA,10,3,NA,NA,NA,"7","IN"
+"David",NA,NA,10,3,NA,NA,NA,"2","IN"
+"Helena",NA,NA,10,3,NA,NA,NA,"8","IN"
+"Henry",NA,NA,10,3,NA,NA,NA,"1","IN"
+"Michelle",NA,NA,10,3,NA,NA,NA,"5","IN"
+"Phil",NA,NA,10,3,NA,NA,NA,"10","IN"
+"Priya",NA,NA,10,3,NA,NA,NA,"4","IN"
+"Rosie",NA,NA,10,3,NA,NA,NA,"9","IN"
+"Steph",NA,NA,10,3,NA,NA,NA,"3","IN"
+"Amelia",NA,NA,10,3,NA,NA,NA,"11","OUT"
+"Michael",NA,NA,10,3,NA,NA,NA,"6","STAR BAKER"
+"Dan",NA,NA,10,3,NA,NA,NA,NA,NA
+"Jamie",NA,NA,10,3,NA,NA,NA,NA,NA
+"Alice",NA,NA,10,4,NA,NA,NA,"8","IN"
+"David",NA,NA,10,4,NA,NA,NA,"2","IN"
+"Helena",NA,NA,10,4,NA,NA,NA,"9","IN"
+"Henry",NA,NA,10,4,NA,NA,NA,"3","IN"
+"Michael",NA,NA,10,4,NA,NA,NA,"7","IN"
+"Michelle",NA,NA,10,4,NA,NA,NA,"5","IN"
+"Priya",NA,NA,10,4,NA,NA,NA,"10","IN"
+"Rosie",NA,NA,10,4,NA,NA,NA,"4","IN"
+"Phil",NA,NA,10,4,NA,NA,NA,"6","OUT"
+"Steph",NA,NA,10,4,NA,NA,NA,"1","STAR BAKER"
+"Amelia",NA,NA,10,4,NA,NA,NA,NA,NA
+"Dan",NA,NA,10,4,NA,NA,NA,NA,NA
+"Jamie",NA,NA,10,4,NA,NA,NA,NA,NA
+"Alice",NA,NA,10,5,NA,NA,NA,"6","IN"
+"David",NA,NA,10,5,NA,NA,NA,"9","IN"
+"Henry",NA,NA,10,5,NA,NA,NA,"3","IN"
+"Michael",NA,NA,10,5,NA,NA,NA,"8","IN"
+"Priya",NA,NA,10,5,NA,NA,NA,"2","IN"
+"Rosie",NA,NA,10,5,NA,NA,NA,"5","IN"
+"Helena",NA,NA,10,5,NA,NA,NA,"1","OUT"
+"Michelle",NA,NA,10,5,NA,NA,NA,"7","OUT"
+"Steph",NA,NA,10,5,NA,NA,NA,"4","STAR BAKER"
+"Amelia",NA,NA,10,5,NA,NA,NA,NA,NA
+"Dan",NA,NA,10,5,NA,NA,NA,NA,NA
+"Jamie",NA,NA,10,5,NA,NA,NA,NA,NA
+"Phil",NA,NA,10,5,NA,NA,NA,NA,NA
+"Alice",NA,NA,10,6,NA,NA,NA,"1","IN"
+"David",NA,NA,10,6,NA,NA,NA,"2","IN"
+"Henry",NA,NA,10,6,NA,NA,NA,"4","IN"
+"Michael",NA,NA,10,6,NA,NA,NA,"6","IN"
+"Rosie",NA,NA,10,6,NA,NA,NA,"5","IN"
+"Priya",NA,NA,10,6,NA,NA,NA,"7","OUT"
+"Steph",NA,NA,10,6,NA,NA,NA,"3","STAR BAKER"
+"Amelia",NA,NA,10,6,NA,NA,NA,NA,NA
+"Dan",NA,NA,10,6,NA,NA,NA,NA,NA
+"Helena",NA,NA,10,6,NA,NA,NA,NA,NA
+"Jamie",NA,NA,10,6,NA,NA,NA,NA,NA
+"Michelle",NA,NA,10,6,NA,NA,NA,NA,NA
+"Phil",NA,NA,10,6,NA,NA,NA,NA,NA
+"Alice",NA,NA,10,7,NA,NA,NA,"6","IN"
+"David",NA,NA,10,7,NA,NA,NA,"2","IN"
+"Rosie",NA,NA,10,7,NA,NA,NA,"1","IN"
+"Steph",NA,NA,10,7,NA,NA,NA,"4","IN"
+"Michael",NA,NA,10,7,NA,NA,NA,"5","OUT"
+"Henry",NA,NA,10,7,NA,NA,NA,"3","STAR BAKER"
+"Amelia",NA,NA,10,7,NA,NA,NA,NA,NA
+"Dan",NA,NA,10,7,NA,NA,NA,NA,NA
+"Helena",NA,NA,10,7,NA,NA,NA,NA,NA
+"Jamie",NA,NA,10,7,NA,NA,NA,NA,NA
+"Michelle",NA,NA,10,7,NA,NA,NA,NA,NA
+"Phil",NA,NA,10,7,NA,NA,NA,NA,NA
+"Priya",NA,NA,10,7,NA,NA,NA,NA,NA
+"Alice",NA,NA,10,8,NA,NA,NA,"3","IN"
+"David",NA,NA,10,8,NA,NA,NA,"1","IN"
+"Rosie",NA,NA,10,8,NA,NA,NA,"2","IN"
+"Henry",NA,NA,10,8,NA,NA,NA,"5","OUT"
+"Steph",NA,NA,10,8,NA,NA,NA,"4","STAR BAKER"
+"Amelia",NA,NA,10,8,NA,NA,NA,NA,NA
+"Dan",NA,NA,10,8,NA,NA,NA,NA,NA
+"Helena",NA,NA,10,8,NA,NA,NA,NA,NA
+"Jamie",NA,NA,10,8,NA,NA,NA,NA,NA
+"Michael",NA,NA,10,8,NA,NA,NA,NA,NA
+"Michelle",NA,NA,10,8,NA,NA,NA,NA,NA
+"Phil",NA,NA,10,8,NA,NA,NA,NA,NA
+"Priya",NA,NA,10,8,NA,NA,NA,NA,NA
+"David",NA,NA,10,9,NA,NA,NA,"2","IN"
+"Steph",NA,NA,10,9,NA,NA,NA,"3","IN"
+"Rosie",NA,NA,10,9,NA,NA,NA,"1","OUT"
+"Alice",NA,NA,10,9,NA,NA,NA,"4","STAR BAKER"
+"Amelia",NA,NA,10,9,NA,NA,NA,NA,NA
+"Dan",NA,NA,10,9,NA,NA,NA,NA,NA
+"Helena",NA,NA,10,9,NA,NA,NA,NA,NA
+"Henry",NA,NA,10,9,NA,NA,NA,NA,NA
+"Jamie",NA,NA,10,9,NA,NA,NA,NA,NA
+"Michael",NA,NA,10,9,NA,NA,NA,NA,NA
+"Michelle",NA,NA,10,9,NA,NA,NA,NA,NA
+"Phil",NA,NA,10,9,NA,NA,NA,NA,NA
+"Priya",NA,NA,10,9,NA,NA,NA,NA,NA
+"Alice",NA,NA,10,10,NA,NA,NA,"2","Runner-up"
+"Steph",NA,NA,10,10,NA,NA,NA,"3","Runner-up"
+"David",NA,NA,10,10,NA,NA,NA,"1","WINNER"
+"Amelia",NA,NA,10,10,NA,NA,NA,NA,NA
+"Dan",NA,NA,10,10,NA,NA,NA,NA,NA
+"Helena",NA,NA,10,10,NA,NA,NA,NA,NA
+"Henry",NA,NA,10,10,NA,NA,NA,NA,NA
+"Jamie",NA,NA,10,10,NA,NA,NA,NA,NA
+"Michael",NA,NA,10,10,NA,NA,NA,NA,NA
+"Michelle",NA,NA,10,10,NA,NA,NA,NA,NA
+"Phil",NA,NA,10,10,NA,NA,NA,NA,NA
+"Priya",NA,NA,10,10,NA,NA,NA,NA,NA
+"Rosie",NA,NA,10,10,NA,NA,NA,NA,NA

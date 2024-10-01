@@ -198,8 +198,8 @@ bakers = bakers %>%
 
 ```{r join datasets}
 combined_dataset = bakes %>% 
-  left_join(bakers, by = c("baker", "series")) %>% 
-  left_join(results, by = c("baker", "series", "episode")) %>% 
+  full_join(bakers, by = c("baker", "series")) %>% 
+  right_join(results, by = c("baker", "series", "episode")) %>% 
   relocate(baker) %>% 
   relocate(baker_age, .after = baker) %>% 
   relocate(baker_occupation, .before = series)
@@ -213,7 +213,42 @@ write.csv(combined_dataset,
 
 For data cleaning, I first imported all datasets and converted missing values to NA. In the 'bakers' dataset, observations listed as "N/A" were treated accordingly. After reviewing the imported data, I noticed that the column names in the 'results' dataset had an incorrect format, so I renamed them and removed any empty rows and columns. In the 'bakers' dataset, the variable for the bakers' names is labeled "baker name," while in the other two datasets, it is simply called "baker." To join the datasets, I renamed "baker name" to "baker." Additionally, the 'bakers' dataset includes full names, whereas the other datasets only contain first names, so I modified the 'bakers' dataset to include only first names. After attempting to join the datasets, I found that the "series" and "episode" columns in the 'results' dataset were stored as characters instead of integers, so I converted them to integers.
 
-To have the final dataset, I used 'left_join' function to join 3 datasets all together. The final dataset has 548 observations in total. I put the bakers' name at the first column. The final dataset has the data of every baker's name, age, and occupation in every series and episode with valid data in terms of signature bake, show topper, hometown, technical, and result. 
-
+To have the final dataset, I used 'full_join' and 'right_join' function to join 3 datasets all together. The final dataset has 1136 observations in total. I put the bakers' name at the first column. The final dataset has the data of every baker's name, age, and occupation in every series and episode with valid data in terms of signature bake, show topper, hometown, technical, and result. 
 
 The final dataset still has some issues. First, there are remaining missing values in the dataset. Second, since the 'results' dataset contains more bakers than the other two datasets, using the left_join function would result in the loss of many observations from the 'results' dataset.
+
+```{r create table}
+star_baker_table = combined_dataset %>% 
+  filter(series >= 5) %>% 
+  filter(result == "STAR BAKER") %>% 
+  knitr::kable()
+
+star_baker_table
+```
+
+Some bakers repeatedly won Star Baker throughout the series, making their eventual win more predictable. For instance, Richard from Season 5 won Star Baker an impressive five times, signaling him as a clear front-runner, even though he didn't win the final. Similarly, Nadiya in Season 6 and Steph in Season 10 both had multiple Star Baker titles (Nadiya had three, Steph had four), marking them as favorites for the title. Nadiya went on to win her season, making her victory less surprising due to her consistent performance.
+
+```{r viewership}
+viewership = read_csv("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/gbb_datasets/viewers.csv",
+           na = c("NA", ".", "")) %>% 
+  janitor::clean_names() %>% 
+  pivot_longer(
+    cols = series_1:series_10,
+    names_to = "series",
+    values_to = "viewership"
+  )
+
+head(viewership, 10)
+```
+
+```{r}
+viewership %>% 
+  filter(series == "series_1") %>% 
+  summarize(avg_viewership_1 = mean(viewership, na.rm = TRUE))
+
+viewership %>% 
+  filter(series == "series_5") %>% 
+  summarize(avg_viewership_5 = mean(viewership, na.rm = TRUE))
+```
+
+The average viewership in Season 1 is 2.77, the average viewership in Season 5 is 10.0393.
