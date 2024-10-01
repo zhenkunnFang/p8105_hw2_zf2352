@@ -588,10 +588,36 @@ colnames(bakers) [1] = &quot;baker&quot;</code></pre>
 <pre class="r"><code>combined_dataset = bakes %&gt;% 
   left_join(bakers, by = c(&quot;baker&quot;, &quot;series&quot;)) %&gt;% 
   left_join(results, by = c(&quot;baker&quot;, &quot;series&quot;, &quot;episode&quot;)) %&gt;% 
-  relocate(baker)</code></pre>
+  relocate(baker) %&gt;% 
+  relocate(baker_age, .after = baker) %&gt;% 
+  relocate(baker_occupation, .before = series)</code></pre>
 <pre class="r"><code>write.csv(combined_dataset, 
           file = &quot;combined_dataset.csv&quot;, 
           row.names = FALSE)</code></pre>
+<p>For data cleaning, I first imported all datasets and converted
+missing values to NA. In the ‘bakers’ dataset, observations listed as
+“N/A” were treated accordingly. After reviewing the imported data, I
+noticed that the column names in the ‘results’ dataset had an incorrect
+format, so I renamed them and removed any empty rows and columns. In the
+‘bakers’ dataset, the variable for the bakers’ names is labeled “baker
+name,” while in the other two datasets, it is simply called “baker.” To
+join the datasets, I renamed “baker name” to “baker.” Additionally, the
+‘bakers’ dataset includes full names, whereas the other datasets only
+contain first names, so I modified the ‘bakers’ dataset to include only
+first names. After attempting to join the datasets, I found that the
+“series” and “episode” columns in the ‘results’ dataset were stored as
+characters instead of integers, so I converted them to integers.</p>
+<p>To have the final dataset, I used ‘left_join’ function to join 3
+datasets all together. The final dataset has 548 observations in total.
+I put the bakers’ name at the first column. The final dataset has the
+data of every baker’s name, age, and occupation in every series and
+episode with valid data in terms of signature bake, show topper,
+hometown, technical, and result.</p>
+<p>The final dataset still has some issues. First, there are remaining
+missing values in the dataset. Second, since the ‘results’ dataset
+contains more bakers than the other two datasets, using the left_join
+function would result in the loss of many observations from the
+‘results’ dataset.</p>
 </div>
 
 
