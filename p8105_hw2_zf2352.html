@@ -377,6 +377,62 @@ display: none;
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <pre class="r"><code>view(nyc_subway)</code></pre>
+<p>The dataset contains subway line information, station names, latitude
+and longitude, the routes served, whether there’s an entrance, vending
+availability, entrance type (stair or elevator), and ADA compliance.</p>
+<p>My data cleaning steps include converting all missing values to “NA”,
+converting column names to a consistent format: lower case, replacing
+spaces and special characters with underscores, retaining the variables
+that are useful for later, and converting entry variable from character
+to logical variable.</p>
+<p>The resulting dataset has 1868 rows and 13 columns.</p>
+<p>These data is tidy except the routes served. It would be better to
+have a variable “route(s)” with one row for each combination of entrance
+and route.</p>
+<p>Answer the following questions using these data: 1. How many distinct
+stations are there? Note that stations are identified both by name and
+by line (e.g. 125th St 8th Avenue; 125st Broadway; 125st Lenox); the
+distinct function may be useful here.</p>
+<pre class="r"><code>distinct_stations = nyc_subway %&gt;%
+  distinct(station_name, line)
+
+num_distinct_stations = nrow(distinct_stations)
+
+num_distinct_stations</code></pre>
+<pre><code>## [1] 465</code></pre>
+<ul>
+<li>There are 465 distinct stations.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>How many stations are ADA compliant?</li>
+</ol>
+<pre class="r"><code>ada_complicant = nyc_subway %&gt;% 
+  filter(ada == &quot;TRUE&quot;)
+
+num_adacomplicant = nrow(ada_complicant)
+
+num_adacomplicant</code></pre>
+<pre><code>## [1] 468</code></pre>
+<ul>
+<li>There are 468 stations are ADA compliant.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>What proportion of station entrances / exits without vending allow
+entrance?</li>
+</ol>
+<pre class="r"><code>allow_entrance = nyc_subway %&gt;% 
+  filter(vending == &quot;NO&quot;) %&gt;% 
+  filter(entry == &quot;YES&quot;)
+
+num_allow_entrance = nrow(allow_entrance)
+
+proportion = nrow(num_allow_entrance)/nrow(nyc_subway)
+
+proportion</code></pre>
+<pre><code>## numeric(0)</code></pre>
+<ul>
+<li>The proportion is 0.</li>
+</ul>
 </div>
 
 

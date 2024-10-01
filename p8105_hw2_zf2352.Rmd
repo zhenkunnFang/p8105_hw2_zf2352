@@ -13,7 +13,7 @@ library(readxl)
 
 # Probelm 1
 
-```{r, }
+```{r, show_col_types = FALSE}
 nyc_subway = 
   read_csv("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/NYC_Transit_Subway_Entrance_And_Exit_Data.csv",
            na = c("NA", ".", "")) %>% 
@@ -26,4 +26,52 @@ nyc_subway =
 view(nyc_subway)
 ```
 
+The dataset contains subway line information, station names, latitude and longitude, the routes served, whether there’s an entrance, vending availability, entrance type (stair or elevator), and ADA compliance.
 
+My data cleaning steps include converting all missing values to "NA", converting column names to a consistent format: lower case, replacing spaces and special characters with underscores, retaining the variables that are useful for later, and converting entry variable from character to logical variable.
+
+The resulting dataset has 1868 rows and 13 columns.
+
+These data is tidy except the routes served. It would be better to have a variable "route(s)" with one row for each combination of entrance and route.
+
+Answer the following questions using these data:
+1. How many distinct stations are there? Note that stations are identified both by name and by line (e.g. 125th St 8th Avenue; 125st Broadway; 125st Lenox); the distinct function may be useful here.
+
+```{r}
+distinct_stations = nyc_subway %>%
+  distinct(station_name, line)
+
+num_distinct_stations = nrow(distinct_stations)
+
+num_distinct_stations
+```
+
+- There are 465 distinct stations.
+
+2. How many stations are ADA compliant?
+```{r}
+ada_complicant = nyc_subway %>% 
+  filter(ada == "TRUE")
+
+num_adacomplicant = nrow(ada_complicant)
+
+num_adacomplicant
+```
+
+- There are 468 stations are ADA compliant.
+
+3. What proportion of station entrances / exits without vending allow entrance?
+
+```{r}
+allow_entrance = nyc_subway %>% 
+  filter(vending == "NO") %>% 
+  filter(entry == "YES")
+
+num_allow_entrance = nrow(allow_entrance)
+
+proportion = nrow(num_allow_entrance)/nrow(nyc_subway)
+
+proportion
+```
+
+- The proportion is 0.
