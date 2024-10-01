@@ -433,6 +433,47 @@ proportion</code></pre>
 <ul>
 <li>The proportion is 0.</li>
 </ul>
+<pre class="r"><code>reformat_nyc_subway = nyc_subway %&gt;% 
+  pivot_longer(
+    cols = route1:route5,
+    names_to = &quot;route_number&quot;,
+    values_to = &quot;route_name&quot;,
+    values_drop_na = TRUE
+  )
+
+reformat_nyc_subway</code></pre>
+<pre><code>## # A tibble: 3,941 × 10
+##    line     station_name station_latitude station_longitude entry vending
+##    &lt;chr&gt;    &lt;chr&gt;                   &lt;dbl&gt;             &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt;  
+##  1 4 Avenue 25th St                  40.7             -74.0 TRUE  YES    
+##  2 4 Avenue 25th St                  40.7             -74.0 TRUE  YES    
+##  3 4 Avenue 36th St                  40.7             -74.0 TRUE  YES    
+##  4 4 Avenue 36th St                  40.7             -74.0 TRUE  YES    
+##  5 4 Avenue 36th St                  40.7             -74.0 TRUE  YES    
+##  6 4 Avenue 36th St                  40.7             -74.0 TRUE  YES    
+##  7 4 Avenue 36th St                  40.7             -74.0 TRUE  YES    
+##  8 4 Avenue 36th St                  40.7             -74.0 TRUE  YES    
+##  9 4 Avenue 45th St                  40.6             -74.0 TRUE  YES    
+## 10 4 Avenue 45th St                  40.6             -74.0 TRUE  YES    
+## # ℹ 3,931 more rows
+## # ℹ 4 more variables: entrance_type &lt;chr&gt;, ada &lt;lgl&gt;, route_number &lt;chr&gt;,
+## #   route_name &lt;chr&gt;</code></pre>
+<pre class="r"><code>Atrain = reformat_nyc_subway %&gt;% 
+  filter(route_name == &quot;A&quot;)
+
+num_Atrain = nrow(Atrain)
+
+num_Atrain</code></pre>
+<pre><code>## [1] 273</code></pre>
+<pre class="r"><code>Atrain_ada = Atrain %&gt;% 
+  filter(ada == TRUE)
+
+num_Atrain_ada = nrow(Atrain_ada)
+
+num_Atrain_ada</code></pre>
+<pre><code>## [1] 107</code></pre>
+<p>There are 273 distinct stations serve the A train. Of the stations
+that serve the A train, 107 stations are ADA compliant.</p>
 </div>
 
 

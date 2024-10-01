@@ -9,6 +9,8 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(readxl)
+library(dplyr)
+library(tidyr)
 ```
 
 # Probelm 1
@@ -75,3 +77,34 @@ proportion
 ```
 
 - The proportion is 0.
+
+```{r, reformat}
+reformat_nyc_subway = nyc_subway %>% 
+  pivot_longer(
+    cols = route1:route5,
+    names_to = "route_number",
+    values_to = "route_name",
+    values_drop_na = TRUE
+  )
+
+reformat_nyc_subway
+```
+
+```{r}
+Atrain = reformat_nyc_subway %>% 
+  filter(route_name == "A")
+
+num_Atrain = nrow(Atrain)
+
+num_Atrain
+
+Atrain_ada = Atrain %>% 
+  filter(ada == TRUE)
+
+num_Atrain_ada = nrow(Atrain_ada)
+
+num_Atrain_ada
+```
+
+There are 273 distinct stations serve the A train. Of the stations that serve the A train, 107 stations are ADA compliant.
+
