@@ -166,3 +166,40 @@ print(total_cigarette_gwynnda_trash_wheel)
 ```
 
 The total weight of trash collected by Professor Trash Wheel is 216.26 tons. The total number of cigarette butts collected by Gwynnda in June of 2022 is 18120.
+
+# Problem 3
+
+```{r import dataset}
+bakers = read_csv("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/gbb_datasets/bakers.csv",
+           na = c("NA", ".", "")) %>% 
+  janitor::clean_names()
+
+bakes = read_csv("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/gbb_datasets/bakes.csv",
+           na = c("NA", ".", "", "N/A")) %>% 
+  janitor::clean_names()
+
+results = read_csv("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/gbb_datasets/results.csv",
+           na = c("NA", ".", "")) %>% 
+  janitor::clean_names()
+
+colnames(results) = c("series","episode","baker","technical","result")
+
+results = results[-c(1, 2),] %>% 
+  mutate(series = as.integer(series),
+         episode = as.integer(episode))
+
+colnames(bakers) [1] = "baker"
+```
+
+```{r only first word in results dataframe}
+bakers = bakers %>% 
+  mutate(baker = sub("^(\\S+).*", "\\1", baker))
+```
+
+```{r join dataframes}
+combine_bakes_bakers = bakes %>% 
+  right_join(bakers, by = c("baker", "series")) %>% 
+  right_join(results, by = c("baker", "series", "episode")) %>% 
+  relocate(baker)
+```
+

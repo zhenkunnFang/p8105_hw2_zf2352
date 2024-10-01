@@ -538,6 +538,58 @@ print(total_weight_professor_trash_wheel)</code></pre>
 216.26 tons. The total number of cigarette butts collected by Gwynnda in
 June of 2022 is 18120.</p>
 </div>
+<div id="problem-3" class="section level1">
+<h1>Problem 3</h1>
+<pre class="r"><code>bakers = read_csv(&quot;/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/gbb_datasets/bakers.csv&quot;,
+           na = c(&quot;NA&quot;, &quot;.&quot;, &quot;&quot;)) %&gt;% 
+  janitor::clean_names()</code></pre>
+<pre><code>## Rows: 120 Columns: 5
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (3): Baker Name, Baker Occupation, Hometown
+## dbl (2): Series, Baker Age
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>bakes = read_csv(&quot;/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/gbb_datasets/bakes.csv&quot;,
+           na = c(&quot;NA&quot;, &quot;.&quot;, &quot;&quot;, &quot;N/A&quot;)) %&gt;% 
+  janitor::clean_names()</code></pre>
+<pre><code>## Rows: 548 Columns: 5
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (3): Baker, Signature Bake, Show Stopper
+## dbl (2): Series, Episode
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>results = read_csv(&quot;/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/gbb_datasets/results.csv&quot;,
+           na = c(&quot;NA&quot;, &quot;.&quot;, &quot;&quot;)) %&gt;% 
+  janitor::clean_names()</code></pre>
+<pre><code>## New names:
+## Rows: 1138 Columns: 5
+## ── Column specification
+## ──────────────────────────────────────────────────────── Delimiter: &quot;,&quot; chr
+## (5): ...1, ...2, ...3, ...4, IN = stayed in; OUT = Eliminated; STAR BAKE...
+## ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+## Specify the column types or set `show_col_types = FALSE` to quiet this message.
+## • `` -&gt; `...1`
+## • `` -&gt; `...2`
+## • `` -&gt; `...3`
+## • `` -&gt; `...4`</code></pre>
+<pre class="r"><code>colnames(results) = c(&quot;series&quot;,&quot;episode&quot;,&quot;baker&quot;,&quot;technical&quot;,&quot;result&quot;)
+
+results = results[-c(1, 2),] %&gt;% 
+  mutate(series = as.integer(series),
+         episode = as.integer(episode))
+
+colnames(bakers) [1] = &quot;baker&quot;</code></pre>
+<pre class="r"><code>bakers = bakers %&gt;% 
+  mutate(baker = sub(&quot;^(\\S+).*&quot;, &quot;\\1&quot;, baker))</code></pre>
+<pre class="r"><code>combine_bakes_bakers = bakes %&gt;% 
+  right_join(bakers, by = c(&quot;baker&quot;, &quot;series&quot;)) %&gt;% 
+  right_join(results, by = c(&quot;baker&quot;, &quot;series&quot;, &quot;episode&quot;)) %&gt;% 
+  relocate(baker)</code></pre>
+</div>
 
 
 
