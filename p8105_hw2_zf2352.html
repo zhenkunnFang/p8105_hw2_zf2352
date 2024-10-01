@@ -475,6 +475,34 @@ num_Atrain_ada</code></pre>
 <p>There are 273 distinct stations serve the A train. Of the stations
 that serve the A train, 107 stations are ADA compliant.</p>
 </div>
+<div id="problem-2" class="section level1">
+<h1>Problem 2</h1>
+<pre class="r"><code>mrtrash_wheel = read_excel(&quot;/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202309_Trash Wheel_Collection Data.xlsx&quot;,
+                         na = c(&quot;NA&quot;, &quot;.&quot;, &quot;&quot;)) %&gt;% 
+  janitor::clean_names() %&gt;%
+  select(-c(15, 16)) %&gt;% 
+  filter(!is.na(dumpster)) %&gt;% 
+  mutate(sports_balls = as.integer(round(sports_balls)))</code></pre>
+<pre><code>## New names:
+## • `` -&gt; `...15`
+## • `` -&gt; `...16`</code></pre>
+<pre class="r"><code>mrtrash_wheel = mrtrash_wheel %&gt;% 
+  mutate(person = &quot;mr_trash_wheel&quot;)
+
+proftrash_wheel = read_excel(&quot;/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202309_Trash Wheel_Collection Data.xlsx&quot;, 
+                             sheet = 2,
+                             na = c(&quot;NA&quot;, &quot;.&quot;, &quot;&quot;)) %&gt;% 
+  janitor::clean_names() %&gt;%
+  filter(!is.na(dumpster)) %&gt;% 
+  mutate(person = &quot;prof_trash_wheel&quot;)
+
+gwynnda_trash_wheel = read_excel(&quot;/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202309_Trash Wheel_Collection Data.xlsx&quot;, 
+                             sheet = 4,
+                             na = c(&quot;NA&quot;, &quot;.&quot;, &quot;&quot;)) %&gt;% 
+  janitor::clean_names() %&gt;%
+  filter(!is.na(dumpster)) %&gt;% 
+  mutate(person = &quot;gwynnda_trash_wheel&quot;)</code></pre>
+</div>
 
 
 

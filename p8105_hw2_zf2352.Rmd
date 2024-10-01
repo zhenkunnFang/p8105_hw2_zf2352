@@ -11,6 +11,7 @@ library(tidyverse)
 library(readxl)
 library(dplyr)
 library(tidyr)
+library(haven)
 ```
 
 # Probelm 1
@@ -107,4 +108,37 @@ num_Atrain_ada
 ```
 
 There are 273 distinct stations serve the A train. Of the stations that serve the A train, 107 stations are ADA compliant.
+
+# Problem 2
+```{r}
+mrtrash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202309_Trash Wheel_Collection Data.xlsx",
+                         na = c("NA", ".", "")) %>% 
+  janitor::clean_names() %>%
+  select(-c(15, 16)) %>% 
+  filter(!is.na(dumpster)) %>% 
+  mutate(sports_balls = as.integer(round(sports_balls)))
+```
+
+```{r}
+mrtrash_wheel = mrtrash_wheel %>% 
+  mutate(person = "mr_trash_wheel")
+
+proftrash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202309_Trash Wheel_Collection Data.xlsx", 
+                             sheet = 2,
+                             na = c("NA", ".", "")) %>% 
+  janitor::clean_names() %>%
+  filter(!is.na(dumpster)) %>% 
+  mutate(person = "prof_trash_wheel")
+
+gwynnda_trash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202309_Trash Wheel_Collection Data.xlsx", 
+                             sheet = 4,
+                             na = c("NA", ".", "")) %>% 
+  janitor::clean_names() %>%
+  filter(!is.na(dumpster)) %>% 
+  mutate(person = "gwynnda_trash_wheel")
+```
+
+```{r combine dataset}
+
+```
 
