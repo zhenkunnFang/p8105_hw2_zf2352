@@ -191,15 +191,21 @@ results = results[-c(1, 2),] %>%
 colnames(bakers) [1] = "baker"
 ```
 
-```{r only first word in results dataframe}
+```{r only first word in results dataset}
 bakers = bakers %>% 
   mutate(baker = sub("^(\\S+).*", "\\1", baker))
 ```
 
-```{r join dataframes}
-combine_bakes_bakers = bakes %>% 
-  right_join(bakers, by = c("baker", "series")) %>% 
-  right_join(results, by = c("baker", "series", "episode")) %>% 
+```{r join datasets}
+combined_dataset = bakes %>% 
+  left_join(bakers, by = c("baker", "series")) %>% 
+  left_join(results, by = c("baker", "series", "episode")) %>% 
   relocate(baker)
+```
+
+```{r}
+write.csv(combined_dataset, 
+          file = "combined_dataset.csv", 
+          row.names = FALSE)
 ```
 

@@ -585,10 +585,13 @@ results = results[-c(1, 2),] %&gt;%
 colnames(bakers) [1] = &quot;baker&quot;</code></pre>
 <pre class="r"><code>bakers = bakers %&gt;% 
   mutate(baker = sub(&quot;^(\\S+).*&quot;, &quot;\\1&quot;, baker))</code></pre>
-<pre class="r"><code>combine_bakes_bakers = bakes %&gt;% 
-  right_join(bakers, by = c(&quot;baker&quot;, &quot;series&quot;)) %&gt;% 
-  right_join(results, by = c(&quot;baker&quot;, &quot;series&quot;, &quot;episode&quot;)) %&gt;% 
+<pre class="r"><code>combined_dataset = bakes %&gt;% 
+  left_join(bakers, by = c(&quot;baker&quot;, &quot;series&quot;)) %&gt;% 
+  left_join(results, by = c(&quot;baker&quot;, &quot;series&quot;, &quot;episode&quot;)) %&gt;% 
   relocate(baker)</code></pre>
+<pre class="r"><code>write.csv(combined_dataset, 
+          file = &quot;combined_dataset.csv&quot;, 
+          row.names = FALSE)</code></pre>
 </div>
 
 
