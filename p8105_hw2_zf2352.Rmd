@@ -254,4 +254,4 @@ viewership %>%
   summarize(avg_viewership_5 = mean(viewership, na.rm = TRUE))
 ```
 
-The average viewership in Season 1 is 2.77, the average viewership in Season 5 is 10.0393.
+The average viewership in Season 1 is 2.77, the average viewership in Season 5 is 10.04.
