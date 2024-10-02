@@ -111,7 +111,7 @@ There are 273 distinct stations serve the A train. Of the stations that serve th
 
 # Problem 2
 ```{r}
-mrtrash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202309_Trash Wheel_Collection Data.xlsx",
+mrtrash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202409 Trash Wheel Collection Data.xlsx",
                          na = c("NA", ".", "")) %>% 
   janitor::clean_names() %>%
   select(-c(15, 16)) %>% 
@@ -124,7 +124,7 @@ mrtrash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_z
 mrtrash_wheel = mrtrash_wheel %>% 
   mutate(person = "mr_trash_wheel")
 
-proftrash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202309_Trash Wheel_Collection Data.xlsx", 
+proftrash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202409 Trash Wheel Collection Data.xlsx", 
                              sheet = 2,
                              na = c("NA", ".", "")) %>% 
   janitor::clean_names() %>%
@@ -132,7 +132,7 @@ proftrash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2
   mutate(person = "prof_trash_wheel",
          year = as.integer(year))
 
-gwynnda_trash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202309_Trash Wheel_Collection Data.xlsx", 
+gwynnda_trash_wheel = read_excel("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/202409 Trash Wheel Collection Data.xlsx", 
                              sheet = 4,
                              na = c("NA", ".", "")) %>% 
   janitor::clean_names() %>%
@@ -148,7 +148,7 @@ trash_wheel =
   relocate(person)
 ```
 
-The combined dataset has 845 observations in total. The variable "person" indicates which Trash Wheel (Mr Trash Wheel, Professor Trash Wheel, or Gwynnda Trash Wheel). The variable "dumpster" indicates the dumpter number. There are also self-explanatory variables including date of collection, amount of total litter and litter type. 
+The combined dataset has 1033 observations in total. The variable "person" indicates which Trash Wheel (Mr Trash Wheel, Professor Trash Wheel, or Gwynnda Trash Wheel). The variable "dumpster" indicates the dumpter number. There are also self-explanatory variables including date of collection, amount of total litter and litter type. 
 
 ```{r}
 total_weight_professor_trash_wheel = trash_wheel %>%
@@ -165,7 +165,7 @@ print(total_weight_professor_trash_wheel)
 print(total_cigarette_gwynnda_trash_wheel)
 ```
 
-The total weight of trash collected by Professor Trash Wheel is 216.26 tons. The total number of cigarette butts collected by Gwynnda in June of 2022 is 18120.
+The total weight of trash collected by Professor Trash Wheel is 246.74 tons. The total number of cigarette butts collected by Gwynnda in June of 2022 is 18120.
 
 # Problem 3
 
