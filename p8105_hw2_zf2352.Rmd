@@ -16,7 +16,7 @@ library(haven)
 
 # Probelm 1
 
-```{r, show_col_types = FALSE}
+```{r}
 nyc_subway = 
   read_csv("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/NYC_Transit_Subway_Entrance_And_Exit_Data.csv",
            na = c("NA", ".", "")) %>% 
@@ -31,11 +31,11 @@ view(nyc_subway)
 
 The dataset contains subway line information, station names, latitude and longitude, the routes served, whether there’s an entrance, vending availability, entrance type (stair or elevator), and ADA compliance.
 
-My data cleaning steps include converting all missing values to "NA", converting column names to a consistent format: lower case, replacing spaces and special characters with underscores, retaining the variables that are useful for later, and converting entry variable from character to logical variable.
+My data cleaning steps include converting all missing values to `NA`, converting column names to a consistent format: lower case, replacing spaces and special characters with underscores, retaining the variables that are useful for later, and converting entry variable from character to logical variable.
 
 The resulting dataset has 1868 rows and 13 columns.
 
-These data is tidy except the routes served. It would be better to have a variable "route(s)" with one row for each combination of entrance and route.
+These data is tidy except the routes served. It would be better to have a variable `route(s)` with one row for each combination of entrance and route.
 
 Answer the following questions using these data:
 1. How many distinct stations are there? Note that stations are identified both by name and by line (e.g. 125th St 8th Avenue; 125st Broadway; 125st Lenox); the distinct function may be useful here.
@@ -179,7 +179,8 @@ bakers = read_csv("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/gbb
 
 bakes = read_csv("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/gbb_datasets/bakes.csv",
            na = c("NA", ".", "", "N/A")) %>% 
-  janitor::clean_names()
+  janitor::clean_names() %>% 
+  mutate(baker = ifelse(baker == '"Jo"', "Joanne", baker))
 
 results = read_csv("/Users/rubp/Desktop/Data Sci 1/Week4/HW2/p8105_hw2_zf2352/gbb_datasets/results.csv",
            na = c("NA", ".", "")) %>% 
@@ -199,6 +200,19 @@ bakers = bakers %>%
   mutate(baker = sub("^(\\S+).*", "\\1", baker))
 ```
 
+```{r check for completeness}
+missing_in_bakes = anti_join(bakers, bakes, 
+                              by = c("baker" = "baker", "series"))
+
+missing_in_results = anti_join(bakers, results, 
+                                by = c("baker" = "baker", "series"))
+
+missing_in_results_for_bakes = anti_join(bakes, results, 
+                                          by = c("baker", "series", "episode"))
+```
+
+
+
 ```{r join datasets}
 combined_dataset = bakes %>% 
   full_join(bakers, by = c("baker", "series")) %>% 
@@ -214,16 +228,24 @@ write.csv(combined_dataset,
           row.names = FALSE)
 ```
 
-For data cleaning, I first imported all datasets and converted missing values to NA. In the 'bakers' dataset, observations listed as "N/A" were treated accordingly. After reviewing the imported data, I noticed that the column names in the 'results' dataset had an incorrect format, so I renamed them and removed any empty rows and columns. In the 'bakers' dataset, the variable for the bakers' names is labeled "baker name," while in the other two datasets, it is simply called "baker." To join the datasets, I renamed "baker name" to "baker." Additionally, the 'bakers' dataset includes full names, whereas the other datasets only contain first names, so I modified the 'bakers' dataset to include only first names. After attempting to join the datasets, I found that the "series" and "episode" columns in the 'results' dataset were stored as characters instead of integers, so I converted them to integers.
+Data cleaning process: 
 
-To have the final dataset, I used 'full_join' and 'right_join' function to join 3 datasets all together. The final dataset has 1136 observations in total. I put the bakers' name at the first column. The final dataset has the data of every baker's name, age, and occupation in every series and episode with valid data in terms of signature bake, show topper, hometown, technical, and result. 
+- I first imported all datasets and converted missing values to NA. In the `bakers.csv` dataset, observations listed as `N/A` were treated accordingly. 
 
-The final dataset still has some issues. First, there are remaining missing values in the dataset. Second, since the 'results' dataset contains more bakers than the other two datasets, using the left_join function would result in the loss of many observations from the 'results' dataset.
+- After reviewing the imported data, I noticed that the column names in the `result.csv` had an incorrect format, so I renamed them and removed any empty rows and columns. 
+
+- Used `anti_join` to check the completeness all dataframes, found that `"Jo"` in `bakes.csv` equals to `Joanne` in `results.csv`, use `mutate` to make them the same.
+
+- In the `bakers.csv` dataset, the variable for the bakers' names is labeled `baker name`, while in the other two datasets, it is simply called `baker`. To join the datasets, I renamed `baker name` to `baker`. Additionally, the `bakers.csv` dataset includes full names, whereas the other datasets only contain first names, so I modified the `bakers.csv` dataset to include only first names. After attempting to join the datasets, I found that the `series` and `episode` columns in the `results.csv` dataset were stored as characters instead of integers, so I converted them to integers.
+
+- To have the final dataset, I used `full_join` and `right_join` function to join 3 datasets all together. The final dataset has 1136 observations in total. I put the bakers' name at the first column. The final dataset has the data of every baker's name, age, and occupation in every series and episode with valid data in terms of signature bake, show topper, hometown, technical, and result. 
+
+The final dataset still has some issues. First, there are remaining missing values in the dataset. Second, since the `results.csv` dataset contains more bakers than the other two datasets, using the left_join function would result in the loss of many observations from the `results.csv` dataset. Meanwhile, use `right_join` would lost many observation in series 9 and 10 as `results.csv` dataset has many missing data for bakers took part in series 9 and 10. 
 
 ```{r create table}
 star_baker_table = combined_dataset %>% 
   filter(series >= 5) %>% 
-  filter(result == "STAR BAKER") %>% 
+  filter(result %in% c("STAR BAKER", "WINNER")) %>% 
   knitr::kable()
 
 star_baker_table
