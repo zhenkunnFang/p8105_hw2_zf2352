@@ -1,5 +1,5 @@
 ---
-title: "p8105_hw2_zf2352"
+title: "HW2"
 author: "Zhenkun Fang"
 date: "2024-10-02"
 output: github_document
